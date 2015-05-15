@@ -7,6 +7,7 @@
 //
 
 #import "HiveTableViewController.h"
+#import "ViewController.h"
 
 @interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -21,9 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.sections = [NSArray new];
-    self.dates = [NSArray new];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
+//    self.sections = [NSArray new];
+//    self.dates = [NSArray new];
+//    
     self.sections = @[@"2014", @"2015"];
     self.dates = @[@"April 25th", @"May 6th"];
     
@@ -37,10 +41,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *date = self.dates[indexPath.row];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
-    cell.textLabel.text = date;
+    //NSString *date = self.dates[indexPath.row];
+   
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"My Cell"];
+    cell.textLabel.text = self.dates[indexPath.row];
     return cell;
     
 }
@@ -48,7 +52,7 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
    // return self.sections.count;
-    return  0;
+    return  1;
     
 }
 
