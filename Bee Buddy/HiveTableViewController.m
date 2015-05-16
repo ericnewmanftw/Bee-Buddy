@@ -8,6 +8,7 @@
 
 #import "HiveTableViewController.h"
 #import "ViewController.h"
+#import "InspectionTableViewController.h"
 
 @interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,12 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
-//    self.sections = [NSArray new];
-//    self.dates = [NSArray new];
-//    
+
+   
     self.sections = @[@"2014", @"2015"];
     self.dates = @[@"April 25th", @"May 6th"];
     
@@ -78,12 +75,15 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//     Get the new view controller using [segue destinationViewController].
-//     Pass the selected object to the new view controller.
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+////     Get the new view controller using [segue destinationViewController].
+//    if ([segue.identifier isEqualToString:@"addEntry"]) {
+//        InspectionTableViewController *inspectionVC = [segue destinationViewController];
+//    }
+////     Pass the selected object to the new view controller.
+
     
-    
-}
+//}
 
 
 @end

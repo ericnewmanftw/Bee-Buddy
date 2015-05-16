@@ -17,6 +17,7 @@
 		9BF02CB81B043A6500A9BE52 /* HiveBoxDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02CB71B043A6500A9BE52 /* HiveBoxDataSource.m */; };
 		9BF02CBB1B043C0400A9BE52 /* HiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02CBA1B043C0400A9BE52 /* HiveTableViewController.m */; };
 		9BF02CC41B05845900A9BE52 /* InspectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02CC31B05845900A9BE52 /* InspectionTableViewController.m */; };
+		9BF02CF91B07C32700A9BE52 /* InspectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02CF81B07C32700A9BE52 /* InspectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		9BF02CBA1B043C0400A9BE52 /* HiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveTableViewController.m; sourceTree = "<group>"; };
 		9BF02CC21B05845900A9BE52 /* InspectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InspectionTableViewController.h; path = ../InspectionTableViewController.h; sourceTree = "<group>"; };
 		9BF02CC31B05845900A9BE52 /* InspectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InspectionTableViewController.m; path = ../InspectionTableViewController.m; sourceTree = "<group>"; };
+		9BF02CF71B07C32700A9BE52 /* InspectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionViewController.h; sourceTree = "<group>"; };
+		9BF02CF81B07C32700A9BE52 /* InspectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				9B4398491AF16E2D005D6F3D /* Main.storyboard */,
 				9BF02CC21B05845900A9BE52 /* InspectionTableViewController.h */,
 				9BF02CC31B05845900A9BE52 /* InspectionTableViewController.m */,
+				9BF02CF71B07C32700A9BE52 /* InspectionViewController.h */,
+				9BF02CF81B07C32700A9BE52 /* InspectionViewController.m */,
 				9BF02CB91B043C0400A9BE52 /* HiveTableViewController.h */,
 				9BF02CBA1B043C0400A9BE52 /* HiveTableViewController.m */,
 				9BF02CB61B043A6500A9BE52 /* HiveBoxDataSource.h */,
@@ -234,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF02CF91B07C32700A9BE52 /* InspectionViewController.m in Sources */,
 				9B4398481AF16E2D005D6F3D /* ViewController.m in Sources */,
 				9BF02CBB1B043C0400A9BE52 /* HiveTableViewController.m in Sources */,
 				9B4398451AF16E2D005D6F3D /* AppDelegate.m in Sources */,

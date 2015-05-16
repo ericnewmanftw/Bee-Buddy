@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSArray *boxes;
 
+
 @end
 
 @implementation InspectionTableViewController
@@ -25,6 +26,7 @@
     self.boxes = @[@"Brood Box", @"Honey Super"];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -40,14 +42,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     // Return the number of rows in the section.
     return self.boxes.count + 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
+       
     UITableViewCell *cell;
     
     if (indexPath.row < self.boxes.count) {
@@ -100,7 +102,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -108,6 +110,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
