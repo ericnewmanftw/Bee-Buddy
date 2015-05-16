@@ -43,7 +43,7 @@
     
     //NSString *date = self.dates[indexPath.row];
    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"My Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspection"];
     cell.textLabel.text = self.dates[indexPath.row];
     return cell;
     
@@ -51,8 +51,9 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-   // return self.sections.count;
-    return  1;
+      //return self.sections.count;
+    return 1;
+    
     
 }
 
@@ -73,14 +74,16 @@
     return self.dates.count;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//     Get the new view controller using [segue destinationViewController].
+//     Pass the selected object to the new view controller.
+    
+    
 }
-*/
+
 
 @end
