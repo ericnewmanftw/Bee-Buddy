@@ -2,16 +2,15 @@
 //  InspectionTableViewController.m
 //  Bee Buddy
 //
-//  Created by Eric Newman on 5/14/15.
+//  Created by Eric Newman on 5/19/15.
 //  Copyright (c) 2015 Eric Newman. All rights reserved.
 //
 
 #import "InspectionTableViewController.h"
 
-@interface InspectionTableViewController () <UITableViewDataSource, UITableViewDelegate>
-
-@property (nonatomic, strong) NSArray *boxes;
-
+@interface InspectionTableViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *queenLabel;
+@property (weak, nonatomic) IBOutlet UITableViewCell *queenCell;
 
 @end
 
@@ -20,13 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    self.boxes = @[@"Brood Box", @"Honey Super"];
-    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -35,38 +33,32 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    // Return the number of sections.
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+//    if (self.queenCell.backgroundColor != [UIColor greenColor]) {
+//        self.queenCell.backgroundColor = [UIColor greenColor];
+//    }else{
+//        self.queenCell.backgroundColor = [UIColor whiteColor];
+//    }
+    
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
+    
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // Return the number of rows in the section.
-    return self.boxes.count + 1;
+
+    UITableViewCell *queenCell = [tableView dequeueReusableCellWithIdentifier:@"queenCell"];
+    return queenCell;
 }
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-       
-    UITableViewCell *cell;
-    
-    if (indexPath.row < self.boxes.count) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"box"];
-        cell.textLabel.text = self.boxes[indexPath.row];
-    }
-    else
-    {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"addBox"];
-        cell.textLabel.text = @"Add Box";
-    }
-    
-    // Configure the cell...
-    
-    return cell;
-}
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -102,7 +94,7 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -110,6 +102,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end

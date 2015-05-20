@@ -8,7 +8,7 @@
 
 #import "HiveTableViewController.h"
 #import "ViewController.h"
-#import "InspectionTableViewController.h"
+
 
 @interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,7 +25,10 @@
     // Do any additional setup after loading the view.
 
    
+    //This will need to show which year an inspection has occurred in.
     self.sections = @[@"2014", @"2015"];
+    
+    //This will show when an appointment is logged.
     self.dates = @[@"April 25th", @"May 6th"];
     
     
