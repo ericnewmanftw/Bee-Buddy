@@ -9,7 +9,8 @@
 #import "ApiaryViewController.h"
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
-@property NSArray *hiveArray;
+@property (nonatomic, strong) NSArray *hiveArray;
+
 
 
 @end

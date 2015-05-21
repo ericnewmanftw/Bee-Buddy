@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Apiary View Controller-->
+        <!--Apiary 1-->
         <scene sceneID="V3f-cO-RB2">
             <objects>
                 <viewController id="jKi-9K-P96" customClass="ApiaryViewController" sceneMemberID="viewController">
@@ -42,6 +42,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="YlO-eA-j7A" kind="show" id="F2H-fC-lLr"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -52,6 +55,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Apiary 1" id="D2F-zX-Jqm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2O-0V-G45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -518,6 +522,7 @@
         <image name="queen" width="294" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="P8p-YL-PUR"/>
         <segue reference="fXq-8W-KZG"/>
         <segue reference="6d6-2D-hIJ"/>
     </inferredMetricsTieBreakers>
