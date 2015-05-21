@@ -343,7 +343,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="queenCell" textLabel="r3D-72-FUL" style="IBUITableViewCellStyleDefault" id="NRv-j5-Hmr">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="r3D-72-FUL" style="IBUITableViewCellStyleDefault" id="NRv-j5-Hmr">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NRv-j5-Hmr" id="WaD-Ek-DcP">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -365,9 +365,13 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Hive 1" prompt="(Current Date)" id="jlR-DS-8tq">
+                    <navigationItem key="navigationItem" title="Hive 1" id="jlR-DS-8tq">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="WWr-2T-b5I"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lRX-ss-44M"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lRX-ss-44M">
+                            <connections>
+                                <action selector="cancelButton:" destination="GgQ-4o-ce5" id="7oV-KL-qYb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="IbD-Sk-EaX"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

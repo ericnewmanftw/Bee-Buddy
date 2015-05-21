@@ -9,8 +9,9 @@
 #import "InspectionTableViewController.h"
 
 @interface InspectionTableViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *queenLabel;
-@property (weak, nonatomic) IBOutlet UITableViewCell *queenCell;
+
+@property (nonatomic, strong) NSArray *inspectionItems;
+
 
 @end
 
@@ -19,10 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.inspectionItems = @[@"Queen", @"Eggs", @"Open Brood", @"Capped Brood", @"Capped Honey"];
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
@@ -49,15 +48,27 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.inspectionItems.count;
     
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+    UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
+    basicCell.textLabel.text = self.inspectionItems[indexPath.row];
     
+    if (indexPath.row < 6) {
+        return basicCell;
+    }else{
+        return nil;
+    }
 
-    UITableViewCell *queenCell = [tableView dequeueReusableCellWithIdentifier:@"queenCell"];
-    return queenCell;
+
+}
+
+
+- (IBAction)cancelButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*
