@@ -34,37 +34,45 @@
 
 
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
-//    if (self.queenCell.backgroundColor != [UIColor greenColor]) {
-//        self.queenCell.backgroundColor = [UIColor greenColor];
-//    }else{
-//        self.queenCell.backgroundColor = [UIColor whiteColor];
-//    }
-    
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView reloadData];
+    if (indexPath.row <5) {
+        UITableViewCell *cell=(UITableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+        if (cell.backgroundColor != [UIColor greenColor]) {
+            [cell setBackgroundColor:[UIColor greenColor]];
+        }else{
+            [cell setBackgroundColor:[UIColor whiteColor]];
+        }
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.inspectionItems.count;
+    return self.inspectionItems.count + 2;
     
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
-    UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
-    basicCell.textLabel.text = self.inspectionItems[indexPath.row];
-    
-    if (indexPath.row < 6) {
+
+    if (indexPath.row < 5) {
+        UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
+        basicCell.textLabel.text = self.inspectionItems[indexPath.row];
         return basicCell;
+    }
+    else if (indexPath.row == 5){
+        UITableViewCell *notesCell = [tableView dequeueReusableCellWithIdentifier:@"notesCell"];
+        notesCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return notesCell;
     }else{
-        return nil;
+        UITableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
+        return imageCell;
     }
 
-
 }
+
 
 
 - (IBAction)cancelButton:(id)sender {
