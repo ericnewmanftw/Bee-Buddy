@@ -51,7 +51,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.inspectionItems.count + 2;
+    return self.inspectionItems.count + 3;
     
 }
 
@@ -66,14 +66,23 @@
         UITableViewCell *notesCell = [tableView dequeueReusableCellWithIdentifier:@"notesCell"];
         notesCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return notesCell;
-    }else{
+    }else if (indexPath.row == 6){
         UITableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
         return imageCell;
+    }else{
+        UITableViewCell *deleteCell = [tableView dequeueReusableCellWithIdentifier:@"deleteCell"];
+        return deleteCell;
     }
 
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 6) {
+        return [UIImage imageNamed:@"queen"].size.height + 20.0;
+    } else {
+        return 44;
+    }
+}
 
 - (IBAction)cancelButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

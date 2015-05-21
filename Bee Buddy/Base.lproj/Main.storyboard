@@ -379,20 +379,35 @@
                                     <segue destination="E0A-u2-kvF" kind="show" id="WOx-Et-WtR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="88" id="fyg-Tf-res">
+                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="220" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="220" id="fyg-Tf-res">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fyg-Tf-res" id="If3-E3-Lms">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="queen" translatesAutoresizingMaskIntoConstraints="NO" id="4WW-oA-EYw">
-                                            <rect key="frame" x="211" y="0.0" width="178" height="87"/>
+                                            <rect key="frame" x="163" y="10" width="275" height="200"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="4WW-oA-EYw" secondAttribute="centerY" id="IwD-Kl-pJj"/>
                                         <constraint firstAttribute="centerX" secondItem="4WW-oA-EYw" secondAttribute="centerX" id="ZRN-03-dT5"/>
                                     </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deleteCell" textLabel="PBk-SN-TeR" style="IBUITableViewCellStyleDefault" id="q4K-a2-FfC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q4K-a2-FfC" id="nns-fG-1bw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PBk-SN-TeR">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -430,7 +445,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bC-G1-coB">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bC-G1-coB">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
@@ -439,6 +454,12 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1bC-G1-coB" firstAttribute="bottom" secondItem="wsF-pD-qqM" secondAttribute="bottomMargin" id="CRc-Ko-opv"/>
+                            <constraint firstItem="1bC-G1-coB" firstAttribute="leading" secondItem="wsF-pD-qqM" secondAttribute="leadingMargin" constant="-16" id="CTQ-BK-d8c"/>
+                            <constraint firstItem="1bC-G1-coB" firstAttribute="top" secondItem="wsF-pD-qqM" secondAttribute="topMargin" id="FWp-2I-25W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1bC-G1-coB" secondAttribute="trailing" constant="-16" id="Y1k-Si-jZv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdr-wE-MN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
