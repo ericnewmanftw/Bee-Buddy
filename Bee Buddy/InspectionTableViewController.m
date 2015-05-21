@@ -83,9 +83,14 @@
         return 44;
     }
 }
+- (IBAction)saveButton:(id)sender {
+}
 
 - (IBAction)cancelButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)addImage:(id)sender {
+    NSLog(@"I worked!");
 }
 
 /*

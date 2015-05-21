@@ -385,13 +385,30 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fyg-Tf-res" id="If3-E3-Lms">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="queen" translatesAutoresizingMaskIntoConstraints="NO" id="4WW-oA-EYw">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ht-0n-NH1">
                                             <rect key="frame" x="163" y="10" width="275" height="200"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addImage:" destination="GgQ-4o-ce5" eventType="touchUpInside" id="gNA-F3-Id4"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="queen" translatesAutoresizingMaskIntoConstraints="NO" id="4WW-oA-EYw">
+                                            <rect key="frame" x="163" y="10" width="275" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="275" id="UDl-3c-pmJ"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="4WW-oA-EYw" secondAttribute="centerY" id="IwD-Kl-pJj"/>
-                                        <constraint firstAttribute="centerX" secondItem="4WW-oA-EYw" secondAttribute="centerX" id="ZRN-03-dT5"/>
+                                        <constraint firstItem="4WW-oA-EYw" firstAttribute="trailing" secondItem="3Ht-0n-NH1" secondAttribute="trailing" id="058-Xa-xvJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4WW-oA-EYw" secondAttribute="bottom" constant="1" id="Ez7-uU-4aj"/>
+                                        <constraint firstItem="4WW-oA-EYw" firstAttribute="top" secondItem="3Ht-0n-NH1" secondAttribute="top" id="JAc-sH-dXm"/>
+                                        <constraint firstItem="4WW-oA-EYw" firstAttribute="centerX" secondItem="If3-E3-Lms" secondAttribute="centerX" id="JvY-Ci-Osg"/>
+                                        <constraint firstItem="4WW-oA-EYw" firstAttribute="leading" secondItem="3Ht-0n-NH1" secondAttribute="leading" id="o6J-u2-RgN"/>
+                                        <constraint firstItem="4WW-oA-EYw" firstAttribute="top" secondItem="If3-E3-Lms" secondAttribute="topMargin" constant="2" id="sR8-q9-aQw"/>
+                                        <constraint firstItem="4WW-oA-EYw" firstAttribute="bottom" secondItem="3Ht-0n-NH1" secondAttribute="bottom" id="wbd-cv-Vtm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -419,13 +436,16 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Hive 1" id="jlR-DS-8tq">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="WWr-2T-b5I"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lRX-ss-44M">
                             <connections>
                                 <action selector="cancelButton:" destination="GgQ-4o-ce5" id="7oV-KL-qYb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="IbD-Sk-EaX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IbD-Sk-EaX">
+                            <connections>
+                                <action selector="saveButton:" destination="GgQ-4o-ce5" id="vK7-Gf-0Ch"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -433,10 +453,10 @@
             </objects>
             <point key="canvasLocation" x="3282" y="-388"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="Lqj-VK-3XR">
             <objects>
-                <viewController id="E0A-u2-kvF" sceneMemberID="viewController">
+                <viewController id="E0A-u2-kvF" customClass="NotesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GLg-Ea-ORX"/>
                         <viewControllerLayoutGuide type="bottom" id="h3x-Uz-gqj"/>
@@ -461,6 +481,19 @@
                             <constraint firstAttribute="trailingMargin" secondItem="1bC-G1-coB" secondAttribute="trailing" constant="-16" id="Y1k-Si-jZv"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="Jjx-oC-HlF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Eph-VQ-gyl">
+                            <connections>
+                                <action selector="cancelButton:" destination="E0A-u2-kvF" id="57k-EU-6dH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8i4-zT-c6D">
+                            <connections>
+                                <action selector="saveButton:" destination="E0A-u2-kvF" id="MRB-cY-RS7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdr-wE-MN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
