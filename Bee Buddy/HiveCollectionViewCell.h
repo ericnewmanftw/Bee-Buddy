@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ApiaryViewController.h"
 
 @interface HiveCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *hiveLabel;
 
 @end

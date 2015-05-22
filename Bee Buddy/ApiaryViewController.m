@@ -7,6 +7,7 @@
 //
 
 #import "ApiaryViewController.h"
+#import "HiveCollectionViewCell.h"
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
@@ -31,6 +32,8 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseHiveCell" forIndexPath:indexPath];
+    
+    hiveCell.titl
     
     return hiveCell;
 }
