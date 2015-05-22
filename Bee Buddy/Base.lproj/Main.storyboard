@@ -512,6 +512,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="1bC-G1-coB" id="Iif-RG-yRk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdr-wE-MN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -522,7 +525,7 @@
         <image name="queen" width="294" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P8p-YL-PUR"/>
+        <segue reference="F2H-fC-lLr"/>
         <segue reference="fXq-8W-KZG"/>
         <segue reference="6d6-2D-hIJ"/>
     </inferredMetricsTieBreakers>
