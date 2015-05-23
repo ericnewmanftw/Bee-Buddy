@@ -1,23 +1,18 @@
 //
-//  CreationViewController.m
+//  HiveCreationViewController.m
 //  Bee Buddy
 //
-//  Created by Eric Newman on 5/22/15.
+//  Created by Eric Newman on 5/23/15.
 //  Copyright (c) 2015 Eric Newman. All rights reserved.
 //
 
-#import "CreationViewController.h"
+#import "HiveCreationViewController.h"
 
-@interface CreationViewController () <UITextFieldDelegate>
-
-@property (weak, nonatomic) IBOutlet UITextField *nameField;
-@property (weak, nonatomic) IBOutlet UITextField *locationField;
-@property (weak, nonatomic) IBOutlet UITextField *numberField;
-
+@interface HiveCreationViewController ()
 
 @end
 
-@implementation CreationViewController
+@implementation HiveCreationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,16 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)saveButton:(id)sender {
-}
-
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    
-    return YES;
 }
 
 /*
