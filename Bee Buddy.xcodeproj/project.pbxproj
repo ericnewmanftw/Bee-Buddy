@@ -22,6 +22,7 @@
 		9B6A49CB1B0E654C0096E552 /* ApiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49CA1B0E654C0096E552 /* ApiaryViewController.m */; };
 		9B6A49CE1B0EC9910096E552 /* HiveCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49CD1B0EC9910096E552 /* HiveCollectionViewCell.m */; };
 		9B6A49D61B0FC9740096E552 /* CreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49D51B0FC9740096E552 /* CreationViewController.m */; };
+		9BC496991B10F16800A4DA78 /* HiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC496981B10F16800A4DA78 /* HiveController.m */; };
 		9BF02CB81B043A6500A9BE52 /* HiveBoxDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02CB71B043A6500A9BE52 /* HiveBoxDataSource.m */; };
 		9BF02CBB1B043C0400A9BE52 /* HiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02CBA1B043C0400A9BE52 /* HiveTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,8 @@
 		9B6A49CD1B0EC9910096E552 /* HiveCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveCollectionViewCell.m; sourceTree = "<group>"; };
 		9B6A49D41B0FC9740096E552 /* CreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationViewController.h; sourceTree = "<group>"; };
 		9B6A49D51B0FC9740096E552 /* CreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationViewController.m; sourceTree = "<group>"; };
+		9BC496971B10F16800A4DA78 /* HiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveController.h; sourceTree = "<group>"; };
+		9BC496981B10F16800A4DA78 /* HiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveController.m; sourceTree = "<group>"; };
 		9BF02CB61B043A6500A9BE52 /* HiveBoxDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveBoxDataSource.h; sourceTree = "<group>"; };
 		9BF02CB71B043A6500A9BE52 /* HiveBoxDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveBoxDataSource.m; sourceTree = "<group>"; };
 		9BF02CB91B043C0400A9BE52 /* HiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveTableViewController.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				9B4398491AF16E2D005D6F3D /* Main.storyboard */,
 				9BF02CB61B043A6500A9BE52 /* HiveBoxDataSource.h */,
 				9BF02CB71B043A6500A9BE52 /* HiveBoxDataSource.m */,
+				9BC496971B10F16800A4DA78 /* HiveController.h */,
+				9BC496981B10F16800A4DA78 /* HiveController.m */,
 				9B4398461AF16E2D005D6F3D /* ViewController.h */,
 				9B4398471AF16E2D005D6F3D /* ViewController.m */,
 				9BC496961B10DEE700A4DA78 /* Inspections Group */,
@@ -309,6 +314,7 @@
 				9B6A49BC1B0C0DC70096E552 /* Model.xcdatamodeld in Sources */,
 				9B4398451AF16E2D005D6F3D /* AppDelegate.m in Sources */,
 				9BF02CB81B043A6500A9BE52 /* HiveBoxDataSource.m in Sources */,
+				9BC496991B10F16800A4DA78 /* HiveController.m in Sources */,
 				9B4398421AF16E2D005D6F3D /* main.m in Sources */,
 				9B6A49C81B0D796A0096E552 /* NotesViewController.m in Sources */,
 			);

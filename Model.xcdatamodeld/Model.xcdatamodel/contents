@@ -23,8 +23,8 @@
         <relationship name="hive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hive" inverseName="inspections" inverseEntity="Hive" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Inspection" positionX="-63" positionY="-18" width="128" height="180"/>
-        <element name="Hive" positionX="-54" positionY="45" width="128" height="105"/>
-        <element name="Apiary" positionX="-36" positionY="54" width="128" height="90"/>
+        <element name="Inspection" positionX="79" positionY="36" width="128" height="180"/>
+        <element name="Hive" positionX="-128" positionY="21" width="128" height="105"/>
+        <element name="Apiary" positionX="-333" positionY="18" width="128" height="90"/>
     </elements>
 </model>
