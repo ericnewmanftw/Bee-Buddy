@@ -8,7 +8,7 @@
 
 #import "CreationViewController.h"
 
-@interface CreationViewController ()
+@interface CreationViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *locationField;
 @property (weak, nonatomic) IBOutlet UITextField *numberField;
@@ -31,6 +31,12 @@
 - (IBAction)saveButton:(id)sender {
 }
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
 /*
 #pragma mark - Navigation

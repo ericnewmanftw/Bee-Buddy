@@ -52,26 +52,30 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
       //return self.sections.count;
-    return 1;
+    return self.sections.count;
     
     
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return self.sections[section];
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-//    switch (section) {
-//        case 0:
-//            return 0;
-//            break;
-//        case 1:
-//            return self.dates.count;
-//            break;
-//            
-//        default:
-//            return 0;
-//            break;
-//    }
-    return self.dates.count;
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        case 1:
+            return self.dates.count;
+            break;
+            
+        default:
+            return 0;
+            break;
+    }
+//    return self.dates.count;
 }
 
 

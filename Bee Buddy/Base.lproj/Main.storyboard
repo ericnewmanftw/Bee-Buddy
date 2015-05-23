@@ -299,7 +299,6 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="fdsa" destination="XH8-Ud-Hvw" id="Ub7-67-eav"/>
                         <outlet property="locationField" destination="Gd7-9l-Tpu" id="8fT-h0-NP2"/>
                         <outlet property="nameField" destination="XH8-Ud-Hvw" id="v1y-s3-fBz"/>
                         <outlet property="numberField" destination="Kcw-N8-wnx" id="yAf-Vo-smE"/>
@@ -537,7 +536,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5a9-fK-duq"/>
-        <segue reference="F2H-fC-lLr"/>
+        <segue reference="P8p-YL-PUR"/>
         <segue reference="fXq-8W-KZG"/>
     </inferredMetricsTieBreakers>
 </document>
