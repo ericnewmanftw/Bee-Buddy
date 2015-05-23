@@ -8,7 +8,9 @@
 
 #import "HiveCreationViewController.h"
 
-@interface HiveCreationViewController ()
+@interface HiveCreationViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *locationField;
 
 @end
 
@@ -23,7 +25,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)saveButton:(id)sender {
+}
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    return YES;
+    
+}
 /*
 #pragma mark - Navigation
 

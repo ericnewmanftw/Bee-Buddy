@@ -320,7 +320,7 @@
         <!--Hive-->
         <scene sceneID="vFc-O0-CJh">
             <objects>
-                <viewController id="mZo-kW-afx" sceneMemberID="viewController">
+                <viewController id="mZo-kW-afx" customClass="HiveCreationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fPK-Yc-YXK"/>
                         <viewControllerLayoutGuide type="bottom" id="qKH-0s-UM8"/>
@@ -334,7 +334,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="oVI-CV-VB2" id="Ijj-4k-2VO"/>
+                                    <outlet property="delegate" destination="mZo-kW-afx" id="lG1-TS-JwR"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kq-tv-P0B">
@@ -351,7 +351,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="delegate" destination="oVI-CV-VB2" id="VDf-e6-o2q"/>
+                                    <outlet property="delegate" destination="mZo-kW-afx" id="eNt-AG-T75"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojK-od-KJr">
@@ -381,12 +381,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hive" id="n5Y-RI-oOg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YbQ-aF-dA3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YbQ-aF-dA3">
+                            <connections>
+                                <action selector="saveButton:" destination="mZo-kW-afx" id="mNY-fc-FcX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="locationField" destination="NDJ-jM-7ae" id="jLk-sG-Nz6"/>
+                        <outlet property="nameField" destination="5kq-tv-P0B" id="dIb-IC-I4E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5J-Cc-8o7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2123" y="1112"/>
+            <point key="canvasLocation" x="2104" y="1112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SIF-CS-65m">
