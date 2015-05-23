@@ -9,6 +9,10 @@
 #import "CreationViewController.h"
 
 @interface CreationViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *locationField;
+@property (weak, nonatomic) IBOutlet UITextField *numberField;
+
 
 @end
 
@@ -23,6 +27,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)saveButton:(id)sender {
+}
+
 
 /*
 #pragma mark - Navigation
