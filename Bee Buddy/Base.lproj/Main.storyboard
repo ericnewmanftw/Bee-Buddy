@@ -86,43 +86,137 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fth-sk-t3g">
-                                <rect key="frame" x="125" y="190" width="57" height="30"/>
-                                <state key="normal" title="Apiary 1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iTe-Py-QND">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FLb-WQ-7Zw">
+                                    <size key="itemSize" width="110" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="40" minY="70" maxX="40" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="apiaryID" id="ouh-Vm-s3N" customClass="ApiaryCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fth-sk-t3g">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="jKi-9K-P96" kind="show" id="wYF-cJ-9jU"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Apiary" translatesAutoresizingMaskIntoConstraints="NO" id="NrI-rR-CyF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljz-eN-nqh">
+                                                    <rect key="frame" x="8" y="98" width="94" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="apiaryLabel" destination="Ljz-eN-nqh" id="5n3-lx-9vV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hiveID" id="xTn-9W-Qku" customClass="HiveCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxN-lE-VRb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="YlO-eA-j7A" kind="show" id="P8p-YL-PUR"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hive" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-7o-XQ4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfI-zR-hMB">
+                                                    <rect key="frame" x="8" y="98" width="94" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="hiveLabel" destination="zfI-zR-hMB" id="Ue1-Ey-O1t"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="createNew" id="BhG-N0-AtF">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addNew" translatesAutoresizingMaskIntoConstraints="NO" id="xBD-xU-lf4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00s-Pb-oJh">
+                                                    <rect key="frame" x="8" y="99" width="94" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSC-Oc-lWh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="z40-r7-cYj" kind="show" id="GoC-ik-HR2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <segue destination="jKi-9K-P96" kind="show" id="wYF-cJ-9jU"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BGj-ac-ARd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="azz-Jc-vlZ"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxN-lE-VRb">
-                                <rect key="frame" x="436" y="190" width="44" height="30"/>
-                                <state key="normal" title="Hive 1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YlO-eA-j7A" kind="show" id="P8p-YL-PUR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSC-Oc-lWh">
-                                <rect key="frame" x="113" y="419" width="81" height="30"/>
-                                <state key="normal" title="Create New">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="z40-r7-cYj" kind="show" id="GoC-ik-HR2"/>
-                                </connections>
-                            </button>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VSC-Oc-lWh" secondAttribute="bottom" constant="151" id="IE2-9M-LeA"/>
-                            <constraint firstItem="fth-sk-t3g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="125" id="Pen-0D-ciI"/>
-                            <constraint firstAttribute="trailing" secondItem="HxN-lE-VRb" secondAttribute="trailing" constant="120" id="Zrv-71-48C"/>
-                            <constraint firstItem="VSC-Oc-lWh" firstAttribute="centerX" secondItem="fth-sk-t3g" secondAttribute="centerX" id="htz-3w-ASM"/>
-                            <constraint firstItem="HxN-lE-VRb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="126" id="uM5-EK-CnZ"/>
-                            <constraint firstItem="fth-sk-t3g" firstAttribute="baseline" secondItem="HxN-lE-VRb" secondAttribute="baseline" id="ujL-jP-RGU"/>
+                            <constraint firstItem="iTe-Py-QND" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="86" id="6pk-GW-QcT"/>
+                            <constraint firstAttribute="trailing" secondItem="iTe-Py-QND" secondAttribute="trailing" constant="150" id="6uj-zb-S7P"/>
+                            <constraint firstAttribute="centerY" secondItem="iTe-Py-QND" secondAttribute="centerY" id="Eku-3j-bAG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iTe-Py-QND" secondAttribute="bottom" id="Rly-UK-Xgh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iTe-Py-QND" secondAttribute="bottom" constant="150" id="UbG-U6-9nT"/>
+                            <constraint firstItem="iTe-Py-QND" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XXh-pN-yDw"/>
+                            <constraint firstItem="iTe-Py-QND" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="150" id="l7K-Qe-Gyh"/>
+                            <constraint firstAttribute="trailing" secondItem="iTe-Py-QND" secondAttribute="trailing" id="n6a-S9-gKl"/>
+                            <constraint firstItem="iTe-Py-QND" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="va8-UR-QjD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6pk-GW-QcT"/>
+                                <exclude reference="6uj-zb-S7P"/>
+                                <exclude reference="Eku-3j-bAG"/>
+                                <exclude reference="l7K-Qe-Gyh"/>
+                                <exclude reference="UbG-U6-9nT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="aeH-ys-nSB"/>
                 </viewController>
@@ -678,10 +772,11 @@
     <resources>
         <image name="Apiary" width="100" height="71"/>
         <image name="Hive" width="100" height="112"/>
+        <image name="addNew" width="56" height="57"/>
         <image name="queen" width="294" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F2H-fC-lLr"/>
+        <segue reference="P8p-YL-PUR"/>
         <segue reference="fXq-8W-KZG"/>
     </inferredMetricsTieBreakers>
 </document>
