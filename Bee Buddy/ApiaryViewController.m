@@ -20,8 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.hiveArray = @[@"Hive A", @"Hive B"];
+    self.hiveArray = @[@"Hive A", @"Hive B", @"The Cool Hive", @"Hive 13", @"Hive 42"];
     // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {

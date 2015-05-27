@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6g4-eg-z0s">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,31 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-ao-cdB">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-ao-cdB">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YeX-Yr-A26">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="100" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="17" minY="108" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="111" maxX="15" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reuseHiveCell" id="cke-3q-Qbv" customClass="HiveCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hiveA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIO-na-vOd">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hive" translatesAutoresizingMaskIntoConstraints="NO" id="DOL-tE-y66">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hiveA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIO-na-vOd">
+                                                    <rect key="frame" x="0.0" y="108" width="100" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="hiveLabel" destination="yIO-na-vOd" id="sHP-L4-80f"/>
                                             <segue destination="YlO-eA-j7A" kind="show" id="F2H-fC-lLr"/>
@@ -55,6 +59,14 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z6G-IL-BzN" firstAttribute="top" secondItem="ADr-ao-cdB" secondAttribute="bottom" id="4f1-DZ-8I9"/>
+                            <constraint firstItem="z6G-IL-BzN" firstAttribute="top" secondItem="ADr-ao-cdB" secondAttribute="bottom" id="L3n-jt-msr"/>
+                            <constraint firstItem="ADr-ao-cdB" firstAttribute="top" secondItem="HLZ-L7-K2B" secondAttribute="bottom" constant="-64" id="SpG-ko-RjZ"/>
+                            <constraint firstItem="ADr-ao-cdB" firstAttribute="leading" secondItem="WWA-6q-4WP" secondAttribute="leading" id="Udj-Kv-cop"/>
+                            <constraint firstItem="ADr-ao-cdB" firstAttribute="top" secondItem="HLZ-L7-K2B" secondAttribute="bottom" constant="-64" id="dCw-oq-cHh"/>
+                            <constraint firstAttribute="trailing" secondItem="ADr-ao-cdB" secondAttribute="trailing" id="n6s-Co-Cc4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Apiary 1" id="D2F-zX-Jqm"/>
                 </viewController>
@@ -188,17 +200,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ta-lx-4V0">
-                                <rect key="frame" x="148" y="285" width="44" height="30"/>
-                                <state key="normal" title="Apiary">
+                                <rect key="frame" x="16" y="236" width="114" height="128"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="oVI-CV-VB2" kind="show" id="5a9-fK-duq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apiary" translatesAutoresizingMaskIntoConstraints="NO" id="5cG-WH-zPe">
+                                <rect key="frame" x="16" y="236" width="114" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hive" translatesAutoresizingMaskIntoConstraints="NO" id="64s-5Z-yvD">
+                                <rect key="frame" x="457" y="236" width="127" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="K9X-IV-RtO"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hive" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2RW-nI-N2M">
+                                <rect key="frame" x="495" y="378" width="51" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Apiary" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-hx-UW6">
+                                <rect key="frame" x="43" y="378" width="60" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="CLc-is-GOd"/>
+                                    <constraint firstAttribute="width" constant="60" id="o7T-Gp-4AO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iod-1U-FgR">
-                                <rect key="frame" x="467" y="285" width="31" height="30"/>
-                                <state key="normal" title="Hive">
+                                <rect key="frame" x="457" y="236" width="127" height="134"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -208,10 +245,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Iod-1U-FgR" secondAttribute="trailing" constant="86" id="2eh-Cg-249"/>
-                            <constraint firstItem="6ta-lx-4V0" firstAttribute="baseline" secondItem="Iod-1U-FgR" secondAttribute="baseline" id="EXT-gd-q5N"/>
-                            <constraint firstItem="Iod-1U-FgR" firstAttribute="centerY" secondItem="xLs-1E-Eqe" secondAttribute="centerY" id="NNJ-YR-BM2"/>
-                            <constraint firstItem="6ta-lx-4V0" firstAttribute="leading" secondItem="xLs-1E-Eqe" secondAttribute="leading" constant="148" id="ni3-cx-2IQ"/>
+                            <constraint firstItem="5cG-WH-zPe" firstAttribute="centerY" secondItem="xLs-1E-Eqe" secondAttribute="centerY" id="8n7-kV-ZGo"/>
+                            <constraint firstItem="6ta-lx-4V0" firstAttribute="bottom" secondItem="64s-5Z-yvD" secondAttribute="bottom" id="8uL-mD-eZp"/>
+                            <constraint firstItem="Iod-1U-FgR" firstAttribute="top" secondItem="64s-5Z-yvD" secondAttribute="top" id="FLO-kz-79k"/>
+                            <constraint firstItem="Iod-1U-FgR" firstAttribute="top" secondItem="6ta-lx-4V0" secondAttribute="top" id="IkI-oB-D0T"/>
+                            <constraint firstItem="Iod-1U-FgR" firstAttribute="firstBaseline" secondItem="6ta-lx-4V0" secondAttribute="firstBaseline" id="LtN-ul-t44"/>
+                            <constraint firstItem="5cG-WH-zPe" firstAttribute="centerX" secondItem="6wn-hx-UW6" secondAttribute="centerX" id="NDN-jR-NHm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2RW-nI-N2M" secondAttribute="trailing" constant="38" id="PZS-Q8-lDE"/>
+                            <constraint firstItem="Iod-1U-FgR" firstAttribute="baseline" secondItem="6ta-lx-4V0" secondAttribute="baseline" id="PoW-fu-RcJ"/>
+                            <constraint firstItem="6ta-lx-4V0" firstAttribute="top" secondItem="5cG-WH-zPe" secondAttribute="top" id="QAX-7e-1iL"/>
+                            <constraint firstItem="64s-5Z-yvD" firstAttribute="trailing" secondItem="xLs-1E-Eqe" secondAttribute="trailingMargin" id="Qm5-OQ-3cJ"/>
+                            <constraint firstItem="6wn-hx-UW6" firstAttribute="leading" secondItem="xLs-1E-Eqe" secondAttribute="leadingMargin" constant="27" id="UbQ-DD-Tgj"/>
+                            <constraint firstItem="5cG-WH-zPe" firstAttribute="leading" secondItem="xLs-1E-Eqe" secondAttribute="leadingMargin" id="Vr2-AA-USE"/>
+                            <constraint firstItem="6ta-lx-4V0" firstAttribute="bottom" secondItem="5cG-WH-zPe" secondAttribute="bottom" id="Xhc-kQ-ijJ"/>
+                            <constraint firstItem="2RW-nI-N2M" firstAttribute="bottom" secondItem="6wn-hx-UW6" secondAttribute="bottom" id="bQK-Ed-eSf"/>
+                            <constraint firstItem="JdR-8l-ilt" firstAttribute="top" secondItem="6wn-hx-UW6" secondAttribute="bottom" constant="184" id="bYD-ML-5mU"/>
+                            <constraint firstItem="6wn-hx-UW6" firstAttribute="top" secondItem="6ta-lx-4V0" secondAttribute="bottom" constant="14" id="eEE-8H-il5"/>
+                            <constraint firstItem="2RW-nI-N2M" firstAttribute="top" secondItem="Iod-1U-FgR" secondAttribute="bottom" constant="8" symbolic="YES" id="erj-C4-7Ix"/>
+                            <constraint firstItem="2RW-nI-N2M" firstAttribute="top" secondItem="6wn-hx-UW6" secondAttribute="top" id="fWh-G1-iPY"/>
+                            <constraint firstItem="Iod-1U-FgR" firstAttribute="leading" secondItem="64s-5Z-yvD" secondAttribute="leading" id="ipe-nX-LTX"/>
+                            <constraint firstItem="6ta-lx-4V0" firstAttribute="trailing" secondItem="5cG-WH-zPe" secondAttribute="trailing" id="irO-j1-GVe"/>
+                            <constraint firstItem="2RW-nI-N2M" firstAttribute="centerX" secondItem="64s-5Z-yvD" secondAttribute="centerX" id="qeZ-XB-5OB"/>
+                            <constraint firstItem="6ta-lx-4V0" firstAttribute="leading" secondItem="5cG-WH-zPe" secondAttribute="leading" id="vqc-7j-CGO"/>
+                            <constraint firstItem="Iod-1U-FgR" firstAttribute="trailing" secondItem="64s-5Z-yvD" secondAttribute="trailing" id="vut-tT-bBF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create New" id="Zci-py-K2F"/>
@@ -620,10 +676,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Apiary" width="100" height="71"/>
+        <image name="Hive" width="100" height="112"/>
         <image name="queen" width="294" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P8p-YL-PUR"/>
+        <segue reference="F2H-fC-lLr"/>
         <segue reference="fXq-8W-KZG"/>
     </inferredMetricsTieBreakers>
 </document>
