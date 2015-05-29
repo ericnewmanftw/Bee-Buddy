@@ -8,6 +8,8 @@
 
 #import "HiveTableViewController.h"
 #import "ViewController.h"
+#import "InspectionTableViewCell.h"
+
 
 
 @interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -43,8 +45,8 @@
     
     //NSString *date = self.dates[indexPath.row];
    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspection"];
-    cell.textLabel.text = self.dates[indexPath.row];
+    InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
+    cell.date.text = self.dates[indexPath.row];
     return cell;
     
 }
@@ -78,6 +80,11 @@
 //    return self.dates.count;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+        return [UIImage imageNamed:@"Hive"].size.height + 20.0;
+
+}
 
 #pragma mark - Navigation
 
