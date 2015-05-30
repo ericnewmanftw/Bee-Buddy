@@ -34,9 +34,9 @@
         NSLog(@"You did it wrong");
     }else{
         [[HiveController sharedInstance] addHiveWithData:self.nameField.text andLocation:self.locationField.text];
-        
-        
     }
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -45,6 +45,8 @@
     return YES;
     
 }
+
+
 /*
 #pragma mark - Navigation
 
