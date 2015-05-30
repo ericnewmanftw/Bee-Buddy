@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Hive.h"
 
 @interface HiveController : NSObject
+
+@property (nonatomic, strong) NSArray *hives;
+
++(HiveController *)sharedInstance;
+
+-(void)removeHive:(Hive *)hive;
+-(void)addHiveWithData:(NSString *)hiveName
+           andLocation:(NSString *)hiveLocation;
+
+
+
 
 @end

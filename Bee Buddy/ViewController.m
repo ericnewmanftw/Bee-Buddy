@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "ApiaryCell.h"
 #import "HiveCell.h"
+#import "Stack.h"
+#import "HiveController.h"
+
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -44,13 +47,18 @@
         apiaryCell.apiaryLabel.text = self.apiaryArray[indexPath.row];
         
         return apiaryCell;
-    }else if (indexPath.item <= (self.apiaryArray.count+self.hiveArray.count)-1){
+    }else if (indexPath.item <= (self.apiaryArray.count+[HiveController sharedInstance].hives.count)-1){
         
-        HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
+       HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
+//        
+//        hiveCell.hiveLabel.text = self.hiveArray[indexPath.row-(self.apiaryArray.count)];
+//
+//        return hiveCell;
+        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
+        hiveCell.hiveLabel.text = hive.name;
         
-        hiveCell.hiveLabel.text = self.hiveArray[indexPath.row-(self.apiaryArray.count)];
-
         return hiveCell;
+        
     }else{
         UICollectionViewCell *createNew = [collectionView dequeueReusableCellWithReuseIdentifier:@"createNew" forIndexPath:indexPath];
         return createNew;
@@ -58,13 +66,15 @@
 
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return (self.apiaryArray.count + self.hiveArray.count)+1;
+    return (self.apiaryArray.count + [HiveController sharedInstance].hives.count)+1;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
     
 }
+
+
 
 
 @end

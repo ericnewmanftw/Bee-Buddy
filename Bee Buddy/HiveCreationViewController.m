@@ -7,10 +7,13 @@
 //
 
 #import "HiveCreationViewController.h"
+#import "HiveController.h"
 
 @interface HiveCreationViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *locationField;
+@property (nonatomic, strong) NSString *hiveName;
+
 
 @end
 
@@ -26,6 +29,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveButton:(id)sender {
+    
+    if ([self.nameField  isEqual: @""]) {
+        NSLog(@"You did it wrong");
+    }else{
+        [[HiveController sharedInstance] addHiveWithData:self.nameField.text andLocation:self.locationField.text];
+        
+        
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
