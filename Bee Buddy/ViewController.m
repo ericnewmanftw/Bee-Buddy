@@ -13,7 +13,7 @@
 #import "HiveController.h"
 
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) NSArray *apiaryArray;
 @property (nonatomic, strong) NSArray *hiveArray;
@@ -30,8 +30,13 @@
     [super viewDidLoad];
     
     self.apiaryArray = @[@"Apiary 1", @"Apiary 2"];
-    self.hiveArray = @[@"Hive 1", @"Hive 2"];
+    //self.hiveArray = @[@"Hive 1", @"Hive 2"];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5;
+    lpgr.delegate = self;
+    [self.collectionView addGestureRecognizer:lpgr];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,5 +86,24 @@
     [self.collectionView reloadData];
 }
 
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    CGPoint p = [gestureRecognizer locationInView:self.collectionView];
+    
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
+    if (indexPath == nil){
+        NSLog(@"couldn't find index path");
+    } else {
+        // get the cell at indexPath (the one you long pressed)
+        UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+        // do stuff with the cell
+        NSLog(@"I worked");
+        [[HiveController sharedInstance] removeHive:cell];
+    }
+    [self.collectionView reloadData];
+}
 
 @end
