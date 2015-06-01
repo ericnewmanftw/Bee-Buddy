@@ -16,8 +16,12 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honeycomb Background 1" translatesAutoresizingMaskIntoConstraints="NO" id="Ha1-J9-k26">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bee Buddy" translatesAutoresizingMaskIntoConstraints="NO" id="10D-37-49j">
                     <rect key="frame" x="182" y="189" width="116" height="101"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="KMZ-3b-lB1"/>
                         <constraint firstAttribute="height" constant="101" id="f1I-rg-cFt"/>
@@ -31,6 +35,10 @@
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstItem="10D-37-49j" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="T0N-6n-O01"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="Ha1-J9-k26" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZKW-cQ-NNe"/>
+                <constraint firstItem="Ha1-J9-k26" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gMg-w2-xTt"/>
+                <constraint firstAttribute="bottom" secondItem="Ha1-J9-k26" secondAttribute="bottom" id="om7-kW-T8p"/>
+                <constraint firstAttribute="trailing" secondItem="Ha1-J9-k26" secondAttribute="trailing" id="vBI-nY-izu"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -39,5 +47,6 @@
     </objects>
     <resources>
         <image name="Bee Buddy" width="101" height="77"/>
+        <image name="honeycomb Background 1" width="223" height="257"/>
     </resources>
 </document>
