@@ -46,41 +46,48 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    
-    if (indexPath.item <= self.apiaryArray.count-1) {
-        
+
+    if (indexPath.section == 0) {
         ApiaryCell *apiaryCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"apiaryID" forIndexPath:indexPath];
         
         apiaryCell.apiaryLabel.text = self.apiaryArray[indexPath.row];
         
         return apiaryCell;
-    }else if (indexPath.item <= (self.apiaryArray.count+[HiveController sharedInstance].hives.count)-1){
+    }else if (indexPath.section ==1){
+               HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
         
-       HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
-//        
-//        hiveCell.hiveLabel.text = self.hiveArray[indexPath.row-(self.apiaryArray.count)];
-//
-//        return hiveCell;
-        Hive *hive = [HiveController sharedInstance].hives[indexPath.row-(self.apiaryArray.count)];
-        hiveCell.hiveLabel.text = hive.name;
+                Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
+                hiveCell.hiveLabel.text = hive.name;
         
-        return hiveCell;
+                return hiveCell;
         
     }else{
         UICollectionViewCell *createNew = [collectionView dequeueReusableCellWithReuseIdentifier:@"createNew" forIndexPath:indexPath];
+        
         return createNew;
     }
 
 }
+
+
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return (self.apiaryArray.count + ([HiveController sharedInstance].hives.count))+1;
- 
+    
+    if (section == 0) {
+        return self.apiaryArray.count;
+    }else if (section == 1){
+        return [HiveController sharedInstance].hives.count;
+    }else{
+        return 1;
+    }
+
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return 3;
     
 }
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [self.collectionView reloadData];
@@ -91,17 +98,21 @@
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
         return;
     }
+    
     CGPoint p = [gestureRecognizer locationInView:self.collectionView];
     
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
+    
     if (indexPath == nil){
         NSLog(@"couldn't find index path");
     } else {
         // get the cell at indexPath (the one you long pressed)
         //UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
         // do stuff with the cell
-        //NSLog(@"I worked");
-        [[HiveController sharedInstance] removeHive:hives[indexPath.row]];
+        NSLog(@"I worked");
+        //[[Stack sharedInstance].managedObjectContext deleteObject:hive];
+        [[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
+        
     }
     [self.collectionView reloadData];
 }

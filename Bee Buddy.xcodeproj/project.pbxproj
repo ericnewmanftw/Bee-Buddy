@@ -14,6 +14,7 @@
 		9B43984D1AF16E2D005D6F3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B43984C1AF16E2D005D6F3D /* Images.xcassets */; };
 		9B4398501AF16E2D005D6F3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B43984E1AF16E2D005D6F3D /* LaunchScreen.xib */; };
 		9B43985C1AF16E2D005D6F3D /* Bee_BuddyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B43985B1AF16E2D005D6F3D /* Bee_BuddyTests.m */; };
+		9B65F7691B1E2961002532BF /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B65F7681B1E2961002532BF /* ImageTableViewCell.m */; };
 		9B6A49B91B0C0D820096E552 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6A49B81B0C0D820096E552 /* CoreData.framework */; };
 		9B6A49BC1B0C0DC70096E552 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49BA1B0C0DC70096E552 /* Model.xcdatamodeld */; };
 		9B6A49C21B0C100C0096E552 /* InspectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49C11B0C100C0096E552 /* InspectionObject.m */; };
@@ -65,6 +66,8 @@
 		9B4398551AF16E2D005D6F3D /* Bee BuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bee BuddyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B43985A1AF16E2D005D6F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B43985B1AF16E2D005D6F3D /* Bee_BuddyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bee_BuddyTests.m; sourceTree = "<group>"; };
+		9B65F7671B1E2961002532BF /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		9B65F7681B1E2961002532BF /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		9B6A49B81B0C0D820096E552 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9B6A49BB1B0C0DC70096E552 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9B6A49C01B0C100C0096E552 /* InspectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InspectionObject.h; path = ../InspectionObject.h; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 				9BF02CBA1B043C0400A9BE52 /* HiveTableViewController.m */,
 				9BC496A61B17A7A700A4DA78 /* InspectionTableViewCell.h */,
 				9BC496A71B17A7A700A4DA78 /* InspectionTableViewCell.m */,
+				9B65F7671B1E2961002532BF /* ImageTableViewCell.h */,
+				9B65F7681B1E2961002532BF /* ImageTableViewCell.m */,
 			);
 			name = "Inspections Group";
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				9BE2D5131B1A3ABC0007EBEE /* StoreViewController.m in Sources */,
 				9B4398451AF16E2D005D6F3D /* AppDelegate.m in Sources */,
 				9BC496A51B1552E900A4DA78 /* HiveCell.m in Sources */,
+				9B65F7691B1E2961002532BF /* ImageTableViewCell.m in Sources */,
 				9BF02CB81B043A6500A9BE52 /* HiveBoxDataSource.m in Sources */,
 				9BC4969F1B11053900A4DA78 /* HiveCreationViewController.m in Sources */,
 				9BC496991B10F16800A4DA78 /* HiveController.m in Sources */,

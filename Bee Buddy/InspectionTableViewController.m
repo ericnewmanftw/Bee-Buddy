@@ -11,7 +11,6 @@
 @interface InspectionTableViewController ()
 
 @property (nonatomic, strong) NSArray *inspectionItems;
-@property (nonatomic, strong) UIImage *image;
 
 
 
