@@ -84,7 +84,13 @@
                             <constraint firstItem="ADr-ao-cdB" firstAttribute="bottom" secondItem="z6G-IL-BzN" secondAttribute="top" id="hDM-oY-V1s"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Apiary 1" id="D2F-zX-Jqm"/>
+                    <navigationItem key="navigationItem" title="Apiary 1" id="D2F-zX-Jqm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="esZ-F7-Rqq">
+                            <connections>
+                                <action selector="addHive:" destination="jKi-9K-P96" id="E3J-Ug-OtY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2O-0V-G45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,15 +129,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fth-sk-t3g">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="jKi-9K-P96" kind="show" id="wYF-cJ-9jU"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apiary" translatesAutoresizingMaskIntoConstraints="NO" id="NrI-rR-CyF">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
                                                 </imageView>
@@ -148,20 +145,19 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="NrI-rR-CyF" firstAttribute="top" secondItem="ouh-Vm-s3N" secondAttribute="top" id="0r2-rr-z1E"/>
                                             <constraint firstItem="Ljz-eN-nqh" firstAttribute="top" secondItem="NrI-rR-CyF" secondAttribute="bottom" constant="8" symbolic="YES" id="77J-Jm-Iit"/>
+                                            <constraint firstAttribute="bottom" secondItem="NrI-rR-CyF" secondAttribute="bottom" constant="30" id="Aiz-QT-y6K"/>
                                             <constraint firstAttribute="trailing" secondItem="NrI-rR-CyF" secondAttribute="trailing" id="S47-8c-EPD"/>
                                             <constraint firstItem="NrI-rR-CyF" firstAttribute="leading" secondItem="ouh-Vm-s3N" secondAttribute="leading" id="ddE-lJ-jo5"/>
                                             <constraint firstItem="Ljz-eN-nqh" firstAttribute="leading" secondItem="ouh-Vm-s3N" secondAttribute="leadingMargin" id="frO-LN-eyn"/>
+                                            <constraint firstAttribute="centerX" secondItem="NrI-rR-CyF" secondAttribute="centerX" id="iqz-IF-JTA"/>
                                             <constraint firstAttribute="bottom" secondItem="Ljz-eN-nqh" secondAttribute="bottom" id="mli-ec-Y4z"/>
-                                            <constraint firstItem="fth-sk-t3g" firstAttribute="leading" secondItem="NrI-rR-CyF" secondAttribute="leading" id="r0H-ju-2i5"/>
-                                            <constraint firstItem="fth-sk-t3g" firstAttribute="top" secondItem="ouh-Vm-s3N" secondAttribute="top" id="sB5-RH-kcm"/>
-                                            <constraint firstItem="Ljz-eN-nqh" firstAttribute="bottom" secondItem="fth-sk-t3g" secondAttribute="bottom" id="sGc-HN-zTD"/>
                                             <constraint firstItem="Ljz-eN-nqh" firstAttribute="centerX" secondItem="NrI-rR-CyF" secondAttribute="centerX" id="sad-ip-nBI"/>
-                                            <constraint firstItem="fth-sk-t3g" firstAttribute="top" secondItem="NrI-rR-CyF" secondAttribute="top" id="wx4-SS-shM"/>
-                                            <constraint firstItem="fth-sk-t3g" firstAttribute="trailing" secondItem="NrI-rR-CyF" secondAttribute="trailing" id="zHK-JQ-chx"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="apiaryLabel" destination="Ljz-eN-nqh" id="5n3-lx-9vV"/>
+                                            <segue destination="jKi-9K-P96" kind="show" identifier="apiary" id="h2q-aY-KjH"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hiveID" id="xTn-9W-Qku" customClass="HiveCell">
@@ -171,15 +167,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxN-lE-VRb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="YlO-eA-j7A" kind="show" id="P8p-YL-PUR"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hive" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-7o-XQ4">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
                                                 </imageView>
@@ -196,17 +183,14 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="yTd-7o-XQ4" firstAttribute="top" secondItem="HxN-lE-VRb" secondAttribute="top" id="6cf-gb-z8N"/>
                                             <constraint firstItem="zfI-zR-hMB" firstAttribute="centerX" secondItem="yTd-7o-XQ4" secondAttribute="centerX" id="JIH-MS-yCF"/>
-                                            <constraint firstAttribute="trailing" secondItem="HxN-lE-VRb" secondAttribute="trailing" id="JVl-FD-SrU"/>
-                                            <constraint firstItem="HxN-lE-VRb" firstAttribute="leading" secondItem="yTd-7o-XQ4" secondAttribute="leading" id="OXf-YE-wfi"/>
-                                            <constraint firstItem="HxN-lE-VRb" firstAttribute="trailing" secondItem="yTd-7o-XQ4" secondAttribute="trailing" id="WXY-b7-Ihu"/>
+                                            <constraint firstItem="yTd-7o-XQ4" firstAttribute="top" secondItem="xTn-9W-Qku" secondAttribute="top" id="KYU-db-WmE"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="yTd-7o-XQ4" secondAttribute="bottom" constant="22" id="P66-2S-dTU"/>
+                                            <constraint firstAttribute="trailing" secondItem="yTd-7o-XQ4" secondAttribute="trailing" id="WEc-dR-xui"/>
                                             <constraint firstItem="zfI-zR-hMB" firstAttribute="leading" secondItem="xTn-9W-Qku" secondAttribute="leadingMargin" id="kVF-5E-2wo"/>
-                                            <constraint firstItem="HxN-lE-VRb" firstAttribute="top" secondItem="xTn-9W-Qku" secondAttribute="top" id="lVR-Db-0h2"/>
-                                            <constraint firstAttribute="bottom" secondItem="HxN-lE-VRb" secondAttribute="bottom" id="lzk-kg-HFP"/>
                                             <constraint firstItem="yTd-7o-XQ4" firstAttribute="leading" secondItem="xTn-9W-Qku" secondAttribute="leading" id="toe-h7-A7d"/>
                                             <constraint firstItem="zfI-zR-hMB" firstAttribute="top" secondItem="yTd-7o-XQ4" secondAttribute="bottom" constant="8" symbolic="YES" id="vTG-2C-JvJ"/>
-                                            <constraint firstItem="HxN-lE-VRb" firstAttribute="bottom" secondItem="zfI-zR-hMB" secondAttribute="bottom" id="xbd-Mm-JG3"/>
+                                            <constraint firstAttribute="bottom" secondItem="yTd-7o-XQ4" secondAttribute="bottom" constant="30" id="xrL-QH-B8g"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="hiveLabel" destination="zfI-zR-hMB" id="Ue1-Ey-O1t"/>
@@ -908,7 +892,6 @@
         <image name="honeycomb Background 1" width="223" height="257"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P8p-YL-PUR"/>
         <segue reference="niu-JJ-pUi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import "CreationViewController.h"
+#import "ApiaryController.h"
 
 @interface CreationViewController () <UITextFieldDelegate>
 
@@ -30,6 +31,13 @@
 }
 
 - (IBAction)saveButton:(id)sender {
+    if ([self.nameField isEqual:@""]) {
+        NSLog(@"You did it wrong!");
+    }else{
+        [[ApiaryController sharedInstance] addApiaryWithData:self.nameField.text andLocation:self.locationField.text andNumberOfHives:nil];
+    }
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
@@ -38,6 +46,8 @@
     
     return YES;
 }
+
+
 
 /*
 #pragma mark - Navigation

@@ -8,6 +8,7 @@
 
 #import "ApiaryViewController.h"
 #import "HiveCollectionViewCell.h"
+#import "Hive.h"
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
@@ -20,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.hiveArray = @[@"Hive A", @"Hive B", @"The Cool Hive", @"Hive 13", @"Hive 42"];
+    self.hiveArray = self.apiary.hives.allObjects;
+    
+//    self.hiveArray = @[@"Hive A", @"Hive B", @"The Cool Hive", @"Hive 13", @"Hive 42"];
     // Do any additional setup after loading the view.
 
 }
@@ -33,7 +36,8 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     HiveCollectionViewCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseHiveCell" forIndexPath:indexPath];
-    hiveCell.hiveLabel.text = self.hiveArray[indexPath.row];
+    Hive *hive = self.hiveArray[indexPath.row];
+    hiveCell.hiveLabel.text = hive.name;
     
     
     return hiveCell;
@@ -48,6 +52,9 @@
     
 }
 
+- (IBAction)addHive:(id)sender {
+    //[self.apiary addHivesObject:hive];
+}
 
 
 /*

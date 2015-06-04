@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Apiary.h"
 
 @interface ApiaryViewController : UIViewController
+
+@property (nonatomic, strong) Apiary *apiary;
 
 @end

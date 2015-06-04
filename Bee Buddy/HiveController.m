@@ -29,7 +29,7 @@
 }
 
 -(void)addHiveWithData:(NSString *)hiveName
-                 andLocation:(NSString *)hiveLocation{
+                 andLocation:(NSString *)hiveLocation {
     
     Hive *hive = [NSEntityDescription insertNewObjectForEntityForName:@"Hive" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     hive.name = hiveName;

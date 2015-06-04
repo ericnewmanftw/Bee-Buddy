@@ -22,10 +22,21 @@
 
 -(void)addApiaryWithData:(NSString *)apiaryName andLocation:(NSString *)apiaryLocation andNumberOfHives:(NSSet *)apiaryHives{
     
+    Apiary *apiary = [NSEntityDescription insertNewObjectForEntityForName:@"Apiary" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+    apiary.name = apiaryName;
+    apiary.location = apiaryLocation;
+    apiary.hives = apiaryHives;
+    
+    [self syncronize];
+     
 }
 
 -(void)removeApiary:(Apiary *)apiary {
     
+    [[Stack sharedInstance].managedObjectContext deleteObject:apiary];
+    [self syncronize];
+    
+
 }
 
 -(void)syncronize {
@@ -34,7 +45,7 @@
 }
 
 -(NSArray *)apiaries {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest fetchRequestWithEntityName:@"Apiary"]];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Apiary"];
     
     NSArray *apiaries = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:NULL];
     
