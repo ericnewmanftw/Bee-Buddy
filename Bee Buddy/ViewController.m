@@ -109,7 +109,6 @@
         // get the cell at indexPath (the one you long pressed)
         //UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
         // do stuff with the cell
-        NSLog(@"I worked");
         //[[Stack sharedInstance].managedObjectContext deleteObject:hive];
         [[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
         

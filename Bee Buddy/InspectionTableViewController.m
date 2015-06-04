@@ -7,8 +7,10 @@
 //
 
 #import "InspectionTableViewController.h"
+#import "ImageTableViewCell.h"
 
-@interface InspectionTableViewController ()
+@interface InspectionTableViewController () <photoCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 
 @property (nonatomic, strong) NSArray *inspectionItems;
 
@@ -20,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     
     self.inspectionItems = @[@"Queen", @"Eggs", @"Open Brood", @"Capped Brood", @"Capped Honey"];
@@ -68,7 +71,10 @@
         notesCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return notesCell;
     }else if (indexPath.row == 6){
-        UITableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
+        
+        ImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
+        imageCell.delegate = self;
+        
         return imageCell;
     }else{
         UITableViewCell *deleteCell = [tableView dequeueReusableCellWithIdentifier:@"deleteCell"];
@@ -90,8 +96,26 @@
 - (IBAction)cancelButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)addImage:(id)sender {
-    NSLog(@"I worked!");
+
+-(void)imageTapped{
+
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    //[self setBackgroundImage:chosenImage forState:UIControlStateNormal];
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 /*

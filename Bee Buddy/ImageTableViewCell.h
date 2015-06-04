@@ -8,11 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "InspectionTableViewController.h"
+@protocol photoCellDelegate;
 
-@interface ImageTableViewCell : UITableViewCell <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ImageTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIButton *button;
 
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) id <photoCellDelegate>delegate;
+
 
 - (IBAction)buttonPressed:(id)sender;
+
+@end
+
+@protocol photoCellDelegate <NSObject>
+
+-(void)imageTapped;
 
 @end
