@@ -14,6 +14,7 @@
 		9B43984D1AF16E2D005D6F3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B43984C1AF16E2D005D6F3D /* Images.xcassets */; };
 		9B4398501AF16E2D005D6F3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B43984E1AF16E2D005D6F3D /* LaunchScreen.xib */; };
 		9B43985C1AF16E2D005D6F3D /* Bee_BuddyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B43985B1AF16E2D005D6F3D /* Bee_BuddyTests.m */; };
+		9B5C7BEE1B212D5000A4826A /* newViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C7BED1B212D5000A4826A /* newViewController.m */; };
 		9B65F7691B1E2961002532BF /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B65F7681B1E2961002532BF /* ImageTableViewCell.m */; };
 		9B65F76C1B1FCE0B002532BF /* ApiaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B65F76B1B1FCE0B002532BF /* ApiaryController.m */; };
 		9B6A49B91B0C0D820096E552 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6A49B81B0C0D820096E552 /* CoreData.framework */; };
@@ -67,6 +68,8 @@
 		9B4398551AF16E2D005D6F3D /* Bee BuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bee BuddyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B43985A1AF16E2D005D6F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B43985B1AF16E2D005D6F3D /* Bee_BuddyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bee_BuddyTests.m; sourceTree = "<group>"; };
+		9B5C7BEC1B212D5000A4826A /* newViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newViewController.h; sourceTree = "<group>"; };
+		9B5C7BED1B212D5000A4826A /* newViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newViewController.m; sourceTree = "<group>"; };
 		9B65F7671B1E2961002532BF /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
 		9B65F7681B1E2961002532BF /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		9B65F76A1B1FCE0B002532BF /* ApiaryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiaryController.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 		9B43983E1AF16E2D005D6F3D /* Bee Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				9B5C7BEC1B212D5000A4826A /* newViewController.h */,
+				9B5C7BED1B212D5000A4826A /* newViewController.m */,
 				9B4398431AF16E2D005D6F3D /* AppDelegate.h */,
 				9B4398441AF16E2D005D6F3D /* AppDelegate.m */,
 				9B6A49C01B0C100C0096E552 /* InspectionObject.h */,
@@ -411,6 +416,7 @@
 				9BC496A51B1552E900A4DA78 /* HiveCell.m in Sources */,
 				9B65F7691B1E2961002532BF /* ImageTableViewCell.m in Sources */,
 				9B65F76C1B1FCE0B002532BF /* ApiaryController.m in Sources */,
+				9B5C7BEE1B212D5000A4826A /* newViewController.m in Sources */,
 				9BF02CB81B043A6500A9BE52 /* HiveBoxDataSource.m in Sources */,
 				9BC4969F1B11053900A4DA78 /* HiveCreationViewController.m in Sources */,
 				9BC496991B10F16800A4DA78 /* HiveController.m in Sources */,
