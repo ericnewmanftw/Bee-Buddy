@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Hive.h"
+#import "Apiary.h"
 
 @interface HiveController : NSObject
 
@@ -18,6 +19,8 @@
 -(void)removeHive:(Hive *)hive;
 -(void)addHiveWithData:(NSString *)hiveName
            andLocation:(NSString *)hiveLocation;
+
+-(void)addHiveWithData:(NSString *)hiveName andApiary:(Apiary *)apiary;
 
 
 

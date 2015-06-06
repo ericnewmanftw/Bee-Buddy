@@ -9,6 +9,7 @@
 #import "ApiaryViewController.h"
 #import "HiveCollectionViewCell.h"
 #import "Hive.h"
+#import "NewHiveInApiaryViewController.h"
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = self.apiary.name;
     
     self.hiveArray = self.apiary.hives.allObjects;
     
@@ -59,14 +62,18 @@
 }
 
 
-/*
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NewHiveInApiaryViewController *newHive = segue.destinationViewController;
+    
+    newHive.apiary = self.apiary;
+    
 }
-*/
 
 @end

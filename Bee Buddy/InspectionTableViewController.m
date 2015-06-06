@@ -112,6 +112,8 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     //[self setBackgroundImage:chosenImage forState:UIControlStateNormal];
+    ImageTableViewCell *buttonCell = [ImageTableViewCell new];
+    [buttonCell.button setBackgroundImage:chosenImage forState:UIControlStateNormal];
     
     
     [picker dismissViewControllerAnimated:YES completion:NULL];

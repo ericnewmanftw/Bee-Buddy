@@ -8,6 +8,7 @@
 
 #import "HiveCreationViewController.h"
 #import "HiveController.h"
+#import "ApiaryViewController.h"
 
 @interface HiveCreationViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;

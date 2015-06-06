@@ -9,6 +9,7 @@
 #import "HiveController.h"
 #import "Stack.h"
 
+
 @implementation HiveController
 
 +(HiveController *)sharedInstance{
@@ -36,8 +37,15 @@
     hive.location = hiveLocation;
     
     [self synchronize];
+}
 
+-(void)addHiveWithData:(NSString *)hiveName andApiary:(Apiary *)apiary {
     
+    Hive *hive = [NSEntityDescription insertNewObjectForEntityForName:@"Hive" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+    hive.name = hiveName;
+    hive.apiary = apiary;
+    
+    [self synchronize];
     
 }
 
@@ -49,6 +57,7 @@
 
 -(NSArray *)hives {
     NSFetchRequest *hiveRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hive"];
+    hiveRequest.predicate = [NSPredicate predicateWithFormat:@"apiary = NULL"];
     
     NSArray *hives = [[Stack sharedInstance].managedObjectContext executeFetchRequest:hiveRequest error:NULL];
     

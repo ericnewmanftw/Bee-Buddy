@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "ApiaryController.h"
 
-@interface newViewController : ViewController
+@interface NewHiveInApiaryViewController : ViewController
+@property (nonatomic, strong) Apiary *apiary;
 
 @end

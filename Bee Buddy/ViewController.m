@@ -102,6 +102,7 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     [self.collectionView reloadData];
 }
 
@@ -120,10 +121,7 @@
     } else if (indexPath.section == 0){
         [[ApiaryController sharedInstance] removeApiary:[ApiaryController sharedInstance].apiaries[indexPath.item]];
     }else if (indexPath.section == 1){
-        // get the cell at indexPath (the one you long pressed)
-        //UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-        // do stuff with the cell
-        //[[Stack sharedInstance].managedObjectContext deleteObject:hive];
+
         [[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
 
     }
