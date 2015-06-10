@@ -69,7 +69,8 @@
         case 0:
             if (cell.backgroundColor != [UIColor greenColor]) {
                 [cell setBackgroundColor:[UIColor greenColor]];
-                self.queenSelected = 1;
+                //getting an error here
+ //               self.queenSelected = 1;
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
             }
