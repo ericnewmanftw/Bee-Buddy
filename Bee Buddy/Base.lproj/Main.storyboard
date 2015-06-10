@@ -96,6 +96,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="ADr-ao-cdB" id="JGg-Xb-rcx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2O-0V-G45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
