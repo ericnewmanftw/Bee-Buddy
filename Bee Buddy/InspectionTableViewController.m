@@ -8,11 +8,18 @@
 
 #import "InspectionTableViewController.h"
 #import "ImageTableViewCell.h"
+#import "InspectionController.h"
 
 @interface InspectionTableViewController () <photoCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
 @property (nonatomic, strong) NSArray *inspectionItems;
+
+@property (nonatomic, strong) NSNumber *queenSelected;
+@property (nonatomic, strong) NSNumber *eggsSelected;
+@property (nonatomic, strong) NSNumber *oBroodSelected;
+@property (nonatomic, strong) NSNumber *cBroodSelected;
+@property (nonatomic, strong) NSNumber *cHoneySelected;
 
 
 
@@ -22,6 +29,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.queenSelected = 0;
+    
     
     
     
@@ -40,16 +50,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    [tableView reloadData];
+//    if (indexPath.row <5) {
+//        UITableViewCell *cell=(UITableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+//        if (cell.backgroundColor != [UIColor greenColor]) {
+//            [cell setBackgroundColor:[UIColor greenColor]];
+//        }else{
+//            [cell setBackgroundColor:[UIColor whiteColor]];
+//        }
+//    }
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     [tableView reloadData];
-    if (indexPath.row <5) {
-        UITableViewCell *cell=(UITableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-        if (cell.backgroundColor != [UIColor greenColor]) {
-            [cell setBackgroundColor:[UIColor greenColor]];
-        }else{
-            [cell setBackgroundColor:[UIColor whiteColor]];
-        }
+    
+    UITableViewCell *cell = (UITableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    switch (indexPath.row) {
+        case 0:
+            if (cell.backgroundColor != [UIColor greenColor]) {
+                [cell setBackgroundColor:[UIColor greenColor]];
+                self.queenSelected = 1;
+            }else{
+                [cell setBackgroundColor:[UIColor whiteColor]];
+            }
+            break;
+            
+        default:
+            break;
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
 

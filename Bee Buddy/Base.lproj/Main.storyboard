@@ -96,13 +96,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="collectionView" destination="ADr-ao-cdB" id="JGg-Xb-rcx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2O-0V-G45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="-1115"/>
+            <point key="canvasLocation" x="1012" y="-1115"/>
         </scene>
         <!--New Hive-->
         <scene sceneID="Lox-Ke-2gh">

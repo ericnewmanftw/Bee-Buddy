@@ -13,7 +13,6 @@
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 @end
@@ -25,7 +24,8 @@
     
     self.title = self.apiary.name;
     
-    [self reloadApiaryHives];
+    self.hiveArray = self.apiary.hives.allObjects;
+    
 //    self.hiveArray = @[@"Hive A", @"Hive B", @"The Cool Hive", @"Hive 13", @"Hive 42"];
     // Do any additional setup after loading the view.
 
@@ -35,17 +35,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    [self reloadApiaryHives];
-}
-
-
-- (void)reloadApiaryHives {
-    self.hiveArray = self.apiary.hives.allObjects;
-    [self.collectionView reloadData];
-}
-
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     

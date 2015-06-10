@@ -12,19 +12,19 @@
         <relationship name="inspections" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Inspection" inverseName="hive" inverseEntity="Inspection" syncable="YES"/>
     </entity>
     <entity name="Inspection" representedClassName="Inspection" syncable="YES">
-        <attribute name="cappedBSelected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="cappedHoneySelected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cappedBSelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="cappedHoneySelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="eggsSelected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="eggsSelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="openBSelected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="queenSelected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="openBSelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="queenSelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
         <relationship name="hive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hive" inverseName="inspections" inverseEntity="Hive" syncable="YES"/>
     </entity>
     <elements>
         <element name="Apiary" positionX="-333" positionY="18" width="128" height="88"/>
         <element name="Hive" positionX="-128" positionY="21" width="128" height="103"/>
-        <element name="Inspection" positionX="79" positionY="36" width="128" height="178"/>
+        <element name="Inspection" positionX="79" positionY="36" width="128" height="180"/>
     </elements>
 </model>
