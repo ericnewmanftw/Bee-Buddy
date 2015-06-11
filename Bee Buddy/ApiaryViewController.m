@@ -10,9 +10,11 @@
 #import "HiveCollectionViewCell.h"
 #import "Hive.h"
 #import "NewHiveInApiaryViewController.h"
+#import "HiveController.h"
 
-@interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 @end
@@ -23,11 +25,12 @@
     [super viewDidLoad];
     
     self.title = self.apiary.name;
-    
     self.hiveArray = self.apiary.hives.allObjects;
     
-//    self.hiveArray = @[@"Hive A", @"Hive B", @"The Cool Hive", @"Hive 13", @"Hive 42"];
-    // Do any additional setup after loading the view.
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5;
+    lpgr.delegate = self;
+    [self.collectionView addGestureRecognizer:lpgr];
 
 }
 
@@ -61,6 +64,19 @@
     
 }
 
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        CGPoint p = [gestureRecognizer locationInView:self.collectionView];
+        
+        NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
+        
+        if (indexPath == nil) {
+            NSLog(@"couldn't find index path");
+        }else if (indexPath.section ==0){
+            [[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
+        }
+    }
+}
 
 
 

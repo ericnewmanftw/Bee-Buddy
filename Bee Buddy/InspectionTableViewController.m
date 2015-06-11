@@ -30,10 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.queenSelected = 0;
-    
-    
-    
+
     
     self.inspectionItems = @[@"Queen", @"Eggs", @"Open Brood", @"Capped Brood", @"Capped Honey"];
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -50,16 +47,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [tableView reloadData];
-//    if (indexPath.row <5) {
-//        UITableViewCell *cell=(UITableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-//        if (cell.backgroundColor != [UIColor greenColor]) {
-//            [cell setBackgroundColor:[UIColor greenColor]];
-//        }else{
-//            [cell setBackgroundColor:[UIColor whiteColor]];
-//        }
-//    }
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     
     [tableView reloadData];
     
@@ -69,8 +57,35 @@
         case 0:
             if (cell.backgroundColor != [UIColor greenColor]) {
                 [cell setBackgroundColor:[UIColor greenColor]];
-                //getting an error here
- //               self.queenSelected = 1;
+
+            }else{
+                [cell setBackgroundColor:[UIColor whiteColor]];
+            }
+            break;
+        case 1:
+            if (cell.backgroundColor != [UIColor greenColor]) {
+                [cell setBackgroundColor:[UIColor greenColor]];
+            }else{
+                [cell setBackgroundColor:[UIColor whiteColor]];
+            }
+            break;
+        case 2:
+            if (cell.backgroundColor != [UIColor greenColor]) {
+                [cell setBackgroundColor:[UIColor greenColor]];
+            }else{
+                [cell setBackgroundColor:[UIColor whiteColor]];
+            }
+            break;
+        case 3:
+            if (cell.backgroundColor != [UIColor greenColor]) {
+                [cell setBackgroundColor:[UIColor greenColor]];
+            }else{
+                [cell setBackgroundColor:[UIColor whiteColor]];
+            }
+            break;
+        case 4:
+            if (cell.backgroundColor != [UIColor greenColor]) {
+                [cell setBackgroundColor:[UIColor greenColor]];
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
             }
@@ -147,6 +162,9 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+- (IBAction)saveButtonTapped:(id)sender {
 }
 
 /*
