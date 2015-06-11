@@ -13,6 +13,7 @@
 #import "HiveController.h"
 #import "ApiaryController.h"
 #import "ApiaryViewController.h"
+#import "HiveTableViewController.h"
 
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
@@ -31,9 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.apiaryArray = @[@"Apiary 1", @"Apiary 2"];
-    self.hiveArray = @[@"Hive 1", @"Hive 2"];
-    
+
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5;
     lpgr.delegate = self;
@@ -139,10 +138,24 @@
         Apiary *apiary = [ApiaryController sharedInstance].apiaries[indexPath.row];
         
         apiaryViewController.apiary = apiary;
+    }else if ([segue.identifier isEqualToString:@"hive"]){
+        HiveTableViewController *hiveTableViewController = (HiveTableViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
+        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
         
-        
+        hiveTableViewController = hive;
     }
 }
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if ([segue.identifier isEqualToString:@"hive"]) {
+//        HiveTableViewController *hiveViewController = (HiveTableViewController *)segue.destinationViewController;
+//        NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
+//        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
+//        
+//        hiveViewController = hive;
+//    }
+//}
 
 
 @end

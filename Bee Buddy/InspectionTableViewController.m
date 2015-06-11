@@ -15,11 +15,12 @@
 
 @property (nonatomic, strong) NSArray *inspectionItems;
 
-@property (nonatomic, strong) NSNumber *queenSelected;
-@property (nonatomic, strong) NSNumber *eggsSelected;
-@property (nonatomic, strong) NSNumber *oBroodSelected;
-@property (nonatomic, strong) NSNumber *cBroodSelected;
-@property (nonatomic, strong) NSNumber *cHoneySelected;
+@property (nonatomic, assign) BOOL queenSelected;
+@property (nonatomic, assign) BOOL eggsSelected;
+@property (nonatomic, assign) BOOL oBroodSelected;
+@property (nonatomic, assign) BOOL cBroodSelected;
+@property (nonatomic, assign) BOOL cHoneySelected;
+
 
 
 
@@ -30,8 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
     
+
     self.inspectionItems = @[@"Queen", @"Eggs", @"Open Brood", @"Capped Brood", @"Capped Honey"];
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -57,37 +58,46 @@
         case 0:
             if (cell.backgroundColor != [UIColor greenColor]) {
                 [cell setBackgroundColor:[UIColor greenColor]];
-
+                self.queenSelected = YES;
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
+                self.queenSelected = NO;
             }
             break;
         case 1:
-            if (cell.backgroundColor != [UIColor greenColor]) {
+            if (cell.backgroundColor !=[UIColor greenColor]) {
                 [cell setBackgroundColor:[UIColor greenColor]];
+                self.eggsSelected = YES;
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
+                self.eggsSelected = NO;
             }
             break;
         case 2:
             if (cell.backgroundColor != [UIColor greenColor]) {
                 [cell setBackgroundColor:[UIColor greenColor]];
+                self.oBroodSelected = YES;
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
+                self.oBroodSelected = NO;
             }
             break;
         case 3:
             if (cell.backgroundColor != [UIColor greenColor]) {
                 [cell setBackgroundColor:[UIColor greenColor]];
+                self.cBroodSelected = YES;
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
+                self.cBroodSelected = NO;
             }
             break;
         case 4:
             if (cell.backgroundColor != [UIColor greenColor]) {
                 [cell setBackgroundColor:[UIColor greenColor]];
+                self.cHoneySelected = YES;
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
+                self.cHoneySelected = NO;
             }
             break;
             
@@ -134,8 +144,6 @@
         return 44;
     }
 }
-- (IBAction)saveButton:(id)sender {
-}
 
 - (IBAction)cancelButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -165,6 +173,11 @@
 }
 
 - (IBAction)saveButtonTapped:(id)sender {
+    
+    [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:@"Note" andImage:NULL andDate:[NSDate date]];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 /*

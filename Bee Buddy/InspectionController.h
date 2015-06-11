@@ -18,13 +18,14 @@
 
 -(void)removeInspection:(Inspection *)inspection;
 
--(void)addInspectionWithQueen:(NSNumber *)queenSelected
-                      andEggs:(NSNumber *)eggsSelected
-                    andOBrood:(NSNumber *)oBroodSelected
-                    andCBrood:(NSNumber *)cBroodSelected
-                    andCHoney:(NSNumber *)cHoneySelected
+-(void)addInspectionWithQueen:(BOOL)queenSelected
+                      andEggs:(BOOL)eggsSelected
+                    andOBrood:(BOOL)oBroodSelected
+                    andCBrood:(BOOL)cBroodSelected
+                    andCHoney:(BOOL)cHoneySelected
                       andNote:(NSString *)inspectionNotes
-                     andImage:(NSData *)inspectionImage;
+                     andImage:(NSData *)inspectionImage
+                      andDate:(NSDate *)inspectionDate;
 
 
 

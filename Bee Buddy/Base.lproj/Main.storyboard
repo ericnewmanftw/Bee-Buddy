@@ -269,7 +269,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="hiveLabel" destination="zfI-zR-hMB" id="Ue1-Ey-O1t"/>
-                                            <segue destination="YlO-eA-j7A" kind="show" id="pbl-B8-VCO"/>
+                                            <segue destination="YlO-eA-j7A" kind="show" identifier="hive" id="pbl-B8-VCO"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="createNew" id="BhG-N0-AtF">
@@ -423,6 +423,8 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="date" destination="E1C-8I-lVW" id="sRq-z0-Udi"/>
+                                            <outlet property="notes" destination="ck1-NL-r3F" id="QcV-wI-F1g"/>
                                             <segue destination="GgQ-4o-ce5" kind="show" id="niu-JJ-pUi"/>
                                         </connections>
                                     </tableViewCell>
@@ -968,7 +970,7 @@
         <image name="honeycomb Background 1" width="223" height="257"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F2H-fC-lLr"/>
+        <segue reference="pbl-B8-VCO"/>
         <segue reference="niu-JJ-pUi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,8 @@
 #import "HiveTableViewController.h"
 #import "ViewController.h"
 #import "InspectionTableViewCell.h"
+#import "InspectionController.h"
+#import "Stack.h"
 
 
 
@@ -27,11 +29,12 @@
     // Do any additional setup after loading the view.
 
    
-    //This will need to show which year an inspection has occurred in.
-    self.sections = @[@"2014", @"2015"];
-    
-    //This will show when an appointment is logged.
-    self.dates = @[@"April 25th", @"May 6th"];
+//    //This will need to show which year an inspection has occurred in.
+//    self.sections = @[@"2014", @"2015"];
+//    
+//    //This will show when an appointment is logged.
+//    self.dates = @[@"April 25th", @"May 6th"];
+
     
     
 }
@@ -46,16 +49,26 @@
     //NSString *date = self.dates[indexPath.row];
    
     InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
-    cell.date.text = self.dates[indexPath.row];
+    Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
+//    cell.date.text = @"DATE from CD";//[NSString stringWithFormat:@"%@",inspection.date];
+//    cell.textField.text = inspection.note;
+    NSDateFormatter *format = [NSDateFormatter new];
+    [format setDateFormat:@"MMM-dd"];
+    NSString *dateString = [format stringFromDate:inspection.date];
+    
+    cell.date.text = [NSString stringWithFormat:@"%@",dateString];
+    cell.notes.text = inspection.note;
+    
     return cell;
     
+  
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-      //return self.sections.count;
-    return self.sections.count;
-    
+
+    //return self.sections.count;
+    return 2;
     
 }
 
@@ -70,14 +83,14 @@
             return 1;
             break;
         case 1:
-            return self.dates.count;
+            return [InspectionController sharedInstance].inspections.count;
             break;
             
         default:
             return 0;
             break;
     }
-//    return self.dates.count;
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

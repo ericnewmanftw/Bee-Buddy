@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface InspectionTableViewCell : UITableViewCell
-//@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UITextView *textField;
-@property (weak, nonatomic) IBOutlet UITextView *date;
+
+@property (strong, nonatomic) IBOutlet UILabel *notes;
+@property (strong, nonatomic) IBOutlet UILabel *date;
 
 @end

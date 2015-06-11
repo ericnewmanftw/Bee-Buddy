@@ -19,18 +19,36 @@
     return sharedInstance;
 }
 
--(void)addInspectionWithQueen:(NSNumber *)queenSelected andEggs:(NSNumber *)eggsSelected andOBrood:(NSNumber *)oBroodSelected andCBrood:(NSNumber *)cBroodSelected andCHoney:(NSNumber *)cHoneySelected andNote:(NSString *)inspectionNotes andImage:(NSData *)inspectionImage{
+-(void)addInspectionWithQueen:(BOOL)queenSelected
+                      andEggs:(BOOL)eggsSelected
+                    andOBrood:(BOOL)oBroodSelected
+                    andCBrood:(BOOL)cBroodSelected
+                    andCHoney:(BOOL)cHoneySelected
+                      andNote:(NSString *)inspectionNotes
+                     andImage:(NSData *)inspectionImage
+                      andDate:(NSDate *)inspectionDate{
+    
     Inspection *inspection = [NSEntityDescription insertNewObjectForEntityForName:@"Inspection" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
-    inspection.queenSelected = queenSelected;
-    inspection.eggsSelected = eggsSelected;
-    inspection.openBSelected = oBroodSelected;
-    inspection.cappedBSelected = cBroodSelected;
-    inspection.cappedHoneySelected = cHoneySelected;
+
+    NSNumber *queenAsNumber = [NSNumber numberWithBool:queenSelected];
+    inspection.queenSelected = queenAsNumber;
+    
+    NSNumber *eggsAsNumber = [NSNumber numberWithBool:eggsSelected];
+    inspection.eggsSelected = eggsAsNumber;
+    
+    NSNumber *oBroodAsNumber = [NSNumber numberWithBool:oBroodSelected];
+    inspection.openBSelected = oBroodAsNumber;
+    
+    NSNumber *cBroodAsNumber = [NSNumber numberWithBool:cBroodSelected];
+    inspection.cappedBSelected = cBroodAsNumber;
+    
+    NSNumber *cHoneyAsNumber = [NSNumber numberWithBool:cHoneySelected];
+    inspection.cappedHoneySelected = cHoneyAsNumber;
+    
     inspection.note = inspectionNotes;
     inspection.image = inspectionImage;
-    
-    
+    inspection.date = inspectionDate;
 
     [self syncronize];
     
