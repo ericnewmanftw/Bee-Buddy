@@ -9,6 +9,7 @@
 #import "InspectionTableViewController.h"
 #import "ImageTableViewCell.h"
 #import "InspectionController.h"
+#import "NotesViewController.h"
 
 @interface InspectionTableViewController () <photoCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -20,6 +21,7 @@
 @property (nonatomic, assign) BOOL oBroodSelected;
 @property (nonatomic, assign) BOOL cBroodSelected;
 @property (nonatomic, assign) BOOL cHoneySelected;
+
 
 
 
@@ -40,6 +42,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    
 }
 
 #pragma mark - Table view data source
@@ -174,7 +181,7 @@
 
 - (IBAction)saveButtonTapped:(id)sender {
     
-    [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:@"Note" andImage:NULL andDate:[NSDate date]];
+    [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:self.noteString andImage:NULL andDate:[NSDate date]];
     
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -214,14 +221,37 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"notesView"]) {
+        NSIndexPath *indexpath = [self.tableView indexPathForCell:sender];
+        
+        NotesViewController *notesViewController = [segue destinationViewController];
+        
+        //NSLog(@"Segue Activated");
+       
+//        if (self.noteString) {
+//            <#statements#>
+//        }
+//        
+//        
+    }
 }
-*/
+
+-(IBAction)unwindFromNotesView:(UIStoryboardSegue *)segue{
+    
+    if ([segue.sourceViewController isKindOfClass:[NotesViewController class]]) {
+        NotesViewController *notesViewController = segue.sourceViewController;
+        if (notesViewController.notesText) {
+            self.noteString = notesViewController.notesText.text;
+        }
+        
+    }
+}
 
 @end

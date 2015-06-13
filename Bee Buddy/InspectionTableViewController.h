@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InspectionTableViewController : UITableViewController
+@property (nonatomic, strong) NSString *noteString;
 
 @end

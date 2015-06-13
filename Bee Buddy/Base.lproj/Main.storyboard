@@ -66,7 +66,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="hiveLabel" destination="yIO-na-vOd" id="sHP-L4-80f"/>
-                                            <segue destination="YlO-eA-j7A" kind="show" id="F2H-fC-lLr"/>
+                                            <segue destination="YlO-eA-j7A" kind="show" identifier="apiaryHive" id="F2H-fC-lLr"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -425,7 +425,7 @@
                                         <connections>
                                             <outlet property="date" destination="E1C-8I-lVW" id="sRq-z0-Udi"/>
                                             <outlet property="notes" destination="ck1-NL-r3F" id="QcV-wI-F1g"/>
-                                            <segue destination="GgQ-4o-ce5" kind="show" id="niu-JJ-pUi"/>
+                                            <segue destination="GgQ-4o-ce5" kind="show" identifier="inspection" id="niu-JJ-pUi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -446,7 +446,7 @@
                     <navigationItem key="navigationItem" title="Hive 1" id="yKU-Xu-DPG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DRj-fM-Bau">
                             <connections>
-                                <segue destination="GgQ-4o-ce5" kind="show" id="cQB-kP-t0d"/>
+                                <segue destination="GgQ-4o-ce5" kind="show" identifier="addNew" id="cQB-kP-t0d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -780,10 +780,10 @@
             </objects>
             <point key="canvasLocation" x="292" y="349"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Hive View Controller-->
         <scene sceneID="5kD-iX-XFr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YlO-eA-j7A" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YlO-eA-j7A" customClass="HiveViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wnW-7c-oT5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -840,7 +840,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="E0A-u2-kvF" kind="show" id="WOx-Et-WtR"/>
+                                    <segue destination="E0A-u2-kvF" kind="show" identifier="notesView" id="WOx-Et-WtR"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="220" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="220" id="fyg-Tf-res" customClass="ImageTableViewCell">
@@ -928,7 +928,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bC-G1-coB">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -951,16 +950,18 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="8i4-zT-c6D">
                             <connections>
                                 <action selector="saveButton:" destination="E0A-u2-kvF" id="MRB-cY-RS7"/>
+                                <segue destination="9M2-l7-65n" kind="unwind" unwindAction="unwindFromNotesView:" id="bPd-CL-CMa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="textView" destination="1bC-G1-coB" id="Iif-RG-yRk"/>
+                        <outlet property="notesText" destination="1bC-G1-coB" id="nhD-EQ-his"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdr-wE-MN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9M2-l7-65n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3918" y="-388"/>
+            <point key="canvasLocation" x="3979" y="-388"/>
         </scene>
     </scenes>
     <resources>
@@ -970,7 +971,7 @@
         <image name="honeycomb Background 1" width="223" height="257"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pbl-B8-VCO"/>
+        <segue reference="F2H-fC-lLr"/>
         <segue reference="niu-JJ-pUi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9B4398421AF16E2D005D6F3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4398411AF16E2D005D6F3D /* main.m */; };
 		9B4398451AF16E2D005D6F3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4398441AF16E2D005D6F3D /* AppDelegate.m */; };
-		9B4398481AF16E2D005D6F3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4398471AF16E2D005D6F3D /* ViewController.m */; };
 		9B43984B1AF16E2D005D6F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4398491AF16E2D005D6F3D /* Main.storyboard */; };
 		9B43984D1AF16E2D005D6F3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B43984C1AF16E2D005D6F3D /* Images.xcassets */; };
 		9B4398501AF16E2D005D6F3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B43984E1AF16E2D005D6F3D /* LaunchScreen.xib */; };
@@ -35,6 +34,8 @@
 		9BC496B41B1A1BFE00A4DA78 /* Apiary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC496B31B1A1BFE00A4DA78 /* Apiary.m */; };
 		9BD41D681B27D47800205A60 /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D671B27D47800205A60 /* Inspection.m */; };
 		9BD41D6B1B27D8FB00205A60 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D6A1B27D8FB00205A60 /* InspectionController.m */; };
+		9BD41D6E1B2A5F6600205A60 /* HiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D6D1B2A5F6600205A60 /* HiveViewController.m */; };
+		9BD41D701B2A5FC300205A60 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D6F1B2A5FC300205A60 /* ViewController.m */; };
 		9BE2D50F1B1A3ABC0007EBEE /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2D5041B1A3ABC0007EBEE /* Products.json */; };
 		9BE2D5101B1A3ABC0007EBEE /* PurchasedDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE2D5061B1A3ABC0007EBEE /* PurchasedDataController.m */; };
 		9BE2D5111B1A3ABC0007EBEE /* SimpleStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2D5071B1A3ABC0007EBEE /* SimpleStore-Info.plist */; };
@@ -62,7 +63,6 @@
 		9B4398431AF16E2D005D6F3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B4398441AF16E2D005D6F3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9B4398461AF16E2D005D6F3D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9B4398471AF16E2D005D6F3D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9B43984A1AF16E2D005D6F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B43984C1AF16E2D005D6F3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9B43984F1AF16E2D005D6F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -109,6 +109,9 @@
 		9BD41D671B27D47800205A60 /* Inspection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
 		9BD41D691B27D8FB00205A60 /* InspectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionController.h; sourceTree = "<group>"; };
 		9BD41D6A1B27D8FB00205A60 /* InspectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionController.m; sourceTree = "<group>"; };
+		9BD41D6C1B2A5F6600205A60 /* HiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveViewController.h; sourceTree = "<group>"; };
+		9BD41D6D1B2A5F6600205A60 /* HiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveViewController.m; sourceTree = "<group>"; };
+		9BD41D6F1B2A5FC300205A60 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9BE2D5041B1A3ABC0007EBEE /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Products.json; path = ../../../SimpleStore/SimpleStore/Products.json; sourceTree = "<group>"; };
 		9BE2D5051B1A3ABC0007EBEE /* PurchasedDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PurchasedDataController.h; path = ../../../SimpleStore/SimpleStore/PurchasedDataController.h; sourceTree = "<group>"; };
 		9BE2D5061B1A3ABC0007EBEE /* PurchasedDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PurchasedDataController.m; path = ../../../SimpleStore/SimpleStore/PurchasedDataController.m; sourceTree = "<group>"; };
@@ -176,7 +179,7 @@
 				9BC4969A1B10F4BE00A4DA78 /* Stack.h */,
 				9BC4969B1B10F4BE00A4DA78 /* Stack.m */,
 				9B4398461AF16E2D005D6F3D /* ViewController.h */,
-				9B4398471AF16E2D005D6F3D /* ViewController.m */,
+				9BD41D6F1B2A5FC300205A60 /* ViewController.m */,
 				9BE2D5031B1A39EE0007EBEE /* Store Group */,
 				9BC496961B10DEE700A4DA78 /* Inspections Group */,
 				9B6A49D31B0FC8ED0096E552 /* Journal Group */,
@@ -269,6 +272,8 @@
 		9BC496961B10DEE700A4DA78 /* Inspections Group */ = {
 			isa = PBXGroup;
 			children = (
+				9BD41D6C1B2A5F6600205A60 /* HiveViewController.h */,
+				9BD41D6D1B2A5F6600205A60 /* HiveViewController.m */,
 				9BF02CB91B043C0400A9BE52 /* HiveTableViewController.h */,
 				9BF02CBA1B043C0400A9BE52 /* HiveTableViewController.m */,
 				9B65F7671B1E2961002532BF /* ImageTableViewCell.h */,
@@ -404,7 +409,6 @@
 			files = (
 				9BE2D5121B1A3ABC0007EBEE /* StorePurchaseController.m in Sources */,
 				9B6A49C21B0C100C0096E552 /* InspectionObject.m in Sources */,
-				9B4398481AF16E2D005D6F3D /* ViewController.m in Sources */,
 				9B6A49C51B0C14790096E552 /* InspectionTableViewController.m in Sources */,
 				9B6A49D61B0FC9740096E552 /* CreationViewController.m in Sources */,
 				9BF02CBB1B043C0400A9BE52 /* HiveTableViewController.m in Sources */,
@@ -427,7 +431,9 @@
 				9BC4969F1B11053900A4DA78 /* HiveCreationViewController.m in Sources */,
 				9BC496991B10F16800A4DA78 /* HiveController.m in Sources */,
 				9BC496A21B15505B00A4DA78 /* ApiaryCell.m in Sources */,
+				9BD41D701B2A5FC300205A60 /* ViewController.m in Sources */,
 				9BC496B41B1A1BFE00A4DA78 /* Apiary.m in Sources */,
+				9BD41D6E1B2A5F6600205A60 /* HiveViewController.m in Sources */,
 				9B4398421AF16E2D005D6F3D /* main.m in Sources */,
 				9B6A49C81B0D796A0096E552 /* NotesViewController.m in Sources */,
 				9BE2D5141B1A3ABC0007EBEE /* StoreViewDatasource.m in Sources */,

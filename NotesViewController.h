@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InspectionTableViewController.h"
 
 @interface NotesViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextView *notesText;
 
 @end

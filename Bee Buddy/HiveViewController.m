@@ -1,18 +1,18 @@
 //
-//  NotesViewController.m
+//  HiveViewController.m
 //  Bee Buddy
 //
-//  Created by Eric Newman on 5/20/15.
+//  Created by Eric Newman on 6/11/15.
 //  Copyright (c) 2015 Eric Newman. All rights reserved.
 //
 
-#import "NotesViewController.h"
+#import "HiveViewController.h"
 
-@interface NotesViewController ()
+@interface HiveViewController ()
 
 @end
 
-@implementation NotesViewController
+@implementation HiveViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,19 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)saveButton:(id)sender {
-    
-    InspectionTableViewController *inspectionTableViewController = [InspectionTableViewController new];
-    
-    inspectionTableViewController.noteString = self.notesText.text;
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
-
-- (IBAction)cancelButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

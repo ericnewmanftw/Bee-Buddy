@@ -14,6 +14,7 @@
 #import "ApiaryController.h"
 #import "ApiaryViewController.h"
 #import "HiveTableViewController.h"
+#import "HiveViewController.h"
 
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
@@ -138,12 +139,16 @@
         Apiary *apiary = [ApiaryController sharedInstance].apiaries[indexPath.row];
         
         apiaryViewController.apiary = apiary;
-    }else if ([segue.identifier isEqualToString:@"hive"]){
-        HiveTableViewController *hiveTableViewController = (HiveTableViewController *)segue.destinationViewController;
+        
+    }
+    
+    if([segue.identifier isEqualToString:@"hive"]){
+        
+        HiveViewController *hiveViewController = (HiveViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
         Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
         
-        hiveTableViewController = hive;
+        hiveViewController.hive = hive;
     }
 }
 

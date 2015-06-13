@@ -11,6 +11,7 @@
 #import "Hive.h"
 #import "NewHiveInApiaryViewController.h"
 #import "HiveController.h"
+#import "HiveViewController.h"
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
@@ -86,10 +87,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NewHiveInApiaryViewController *newHive = segue.destinationViewController;
     
-    newHive.apiary = self.apiary;
-    
+//    if ([segue.identifier isEqualToString:@"presentNewHive"]) {
+//        NewHiveInApiaryViewController *newHive = segue.destinationViewController;
+//        
+//    }
+
+    if([segue.identifier isEqualToString:@"apiaryHive"]){
+        
+        HiveViewController *hiveViewController = (HiveViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
+        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
+        
+        hiveViewController.hive = hive;
+    }
 }
 
 @end

@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSArray *dates;
 
 
+
 @end
 
 @implementation HiveTableViewController
@@ -46,12 +47,13 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //NSString *date = self.dates[indexPath.row];
-   
+//    //NSString *date = self.dates[indexPath.row];
+//    if ([InspectionController sharedInstance].inspections.count == 0) {
+//        return 0;
+//    }else{
     InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
+    
     Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
-//    cell.date.text = @"DATE from CD";//[NSString stringWithFormat:@"%@",inspection.date];
-//    cell.textField.text = inspection.note;
     NSDateFormatter *format = [NSDateFormatter new];
     [format setDateFormat:@"MMM-dd"];
     NSString *dateString = [format stringFromDate:inspection.date];
@@ -80,7 +82,7 @@
     
     switch (section) {
         case 0:
-            return 1;
+            return 0;
             break;
         case 1:
             return [InspectionController sharedInstance].inspections.count;
