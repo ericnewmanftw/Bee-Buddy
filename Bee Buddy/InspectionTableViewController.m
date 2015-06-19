@@ -45,8 +45,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
-    
+    [super viewWillAppear:YES];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -229,17 +229,13 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"notesView"]) {
-        NSIndexPath *indexpath = [self.tableView indexPathForCell:sender];
+//        NSIndexPath *indexpath = [self.tableView indexPathForCell:sender];
         
-        NotesViewController *notesViewController = [segue destinationViewController];
+//        NotesViewController *notesViewController = [segue destinationViewController];
         
         //NSLog(@"Segue Activated");
        
-//        if (self.noteString) {
-//            <#statements#>
-//        }
-//        
-//        
+       
     }
 }
 
