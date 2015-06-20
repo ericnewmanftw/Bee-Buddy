@@ -11,16 +11,13 @@
 #import "InspectionController.h"
 #import "NotesViewController.h"
 
+
 @interface InspectionTableViewController () <photoCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
 @property (nonatomic, strong) NSArray *inspectionItems;
 
-@property (nonatomic, assign) BOOL queenSelected;
-@property (nonatomic, assign) BOOL eggsSelected;
-@property (nonatomic, assign) BOOL oBroodSelected;
-@property (nonatomic, assign) BOOL cBroodSelected;
-@property (nonatomic, assign) BOOL cHoneySelected;
+
 
 
 
@@ -36,6 +33,8 @@
     
 
     self.inspectionItems = @[@"Queen", @"Eggs", @"Open Brood", @"Capped Brood", @"Capped Honey"];
+    
+    
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
@@ -60,6 +59,8 @@
     [tableView reloadData];
     
     UITableViewCell *cell = (UITableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    
     
     switch (indexPath.row) {
         case 0:
@@ -181,8 +182,8 @@
 
 - (IBAction)saveButtonTapped:(id)sender {
     
-    [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:self.noteString andImage:NULL andDate:[NSDate date]];
-    
+    [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:self.noteString andImage:NULL andDate:[NSDate date] andHive:self.hive];
+    //remember to add the hive.
     [self.navigationController popViewControllerAnimated:YES];
     
 }

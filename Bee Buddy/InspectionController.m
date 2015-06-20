@@ -50,6 +50,7 @@
     inspection.note = inspectionNotes;
     inspection.image = inspectionImage;
     inspection.date = inspectionDate;
+    inspection.hive = hive;
     
     
     [self syncronize];

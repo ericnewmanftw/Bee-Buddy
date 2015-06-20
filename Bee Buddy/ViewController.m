@@ -144,11 +144,21 @@
     
     if([segue.identifier isEqualToString:@"hive"]){
         
-        HiveViewController *hiveViewController = (HiveViewController *)segue.destinationViewController;
+//        HiveViewController *hiveViewController = (HiveViewController *)segue.destinationViewController;
+//        NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
+//        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
+//        
+        //hiveViewController.hive = hive;
+
+        HiveTableViewController *hiveTableViewController = (HiveTableViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
         Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
         
-        hiveViewController.hive = hive;
+        hiveTableViewController.hive = hive;
+        hiveTableViewController.navigationItem.title = hive.name;
+        
+        
+        
     }
 }
 

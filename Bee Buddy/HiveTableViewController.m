@@ -11,6 +11,7 @@
 #import "InspectionTableViewCell.h"
 #import "InspectionController.h"
 #import "Stack.h"
+#import "InspectionTableViewController.h"
 
 
 
@@ -27,9 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = self.hive.name;
-    
     
     
     // Do any additional setup after loading the view.
@@ -118,6 +116,29 @@
 
     
 //}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    
+    if([segue.identifier isEqualToString:@"inspection"]){
+
+
+        
+        InspectionTableViewController *inspectionTableViewController = (InspectionTableViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
+        Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
+        
+        inspectionTableViewController.inspection = inspection;
+        
+        NSDateFormatter *format = [NSDateFormatter new];
+        [format setDateFormat:@"MMM-dd"];
+        NSString *dateString = [format stringFromDate:inspection.date];
+        
+        inspectionTableViewController.navigationItem.title = dateString;
+        
+        inspectionTableViewController.queenSelected = inspection.queenSelected.boolValue;
+        
+    }
+}
 
 
 @end

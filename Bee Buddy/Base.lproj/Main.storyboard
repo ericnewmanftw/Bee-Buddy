@@ -66,7 +66,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="hiveLabel" destination="yIO-na-vOd" id="sHP-L4-80f"/>
-                                            <segue destination="YlO-eA-j7A" kind="show" identifier="apiaryHive" id="F2H-fC-lLr"/>
+                                            <segue destination="C2q-gs-tgk" kind="show" identifier="apiaryHive" id="0sP-zh-82N"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -269,7 +269,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="hiveLabel" destination="zfI-zR-hMB" id="Ue1-Ey-O1t"/>
-                                            <segue destination="YlO-eA-j7A" kind="show" identifier="hive" id="pbl-B8-VCO"/>
+                                            <segue destination="C2q-gs-tgk" kind="show" identifier="hive" id="ICe-oA-hNo"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="createNew" id="BhG-N0-AtF">
@@ -448,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xY0-Ea-yk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2607" y="-388"/>
+            <point key="canvasLocation" x="1677" y="-388"/>
         </scene>
         <!--Create New-->
         <scene sceneID="0Pv-z8-0ub">
@@ -772,25 +772,7 @@
             </objects>
             <point key="canvasLocation" x="292" y="349"/>
         </scene>
-        <!--Hive View Controller-->
-        <scene sceneID="5kD-iX-XFr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YlO-eA-j7A" customClass="HiveViewController" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wnW-7c-oT5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="C2q-gs-tgk" kind="relationship" relationship="rootViewController" id="egR-ur-1Y9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BB8-bo-URo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1795" y="-388"/>
-        </scene>
-        <!--Inspection Table View Controller-->
+        <!--Date-->
         <scene sceneID="fFv-gd-iDM">
             <objects>
                 <tableViewController id="GgQ-4o-ce5" customClass="InspectionTableViewController" sceneMemberID="viewController">
@@ -896,7 +878,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="jlR-DS-8tq">
+                    <navigationItem key="navigationItem" title="Date" id="jlR-DS-8tq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lRX-ss-44M">
                             <connections>
                                 <action selector="cancelButton:" destination="GgQ-4o-ce5" id="7oV-KL-qYb"/>
@@ -912,7 +894,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMq-nn-vQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3282" y="-388"/>
+            <point key="canvasLocation" x="2392" y="-388"/>
         </scene>
         <!--Title-->
         <scene sceneID="Lqj-VK-3XR">
@@ -962,7 +944,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdr-wE-MN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9M2-l7-65n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3979" y="-388"/>
+            <point key="canvasLocation" x="3107" y="-388"/>
         </scene>
     </scenes>
     <resources>
@@ -973,7 +955,7 @@
         <image name="honeycomb Background 1" width="223" height="257"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pbl-B8-VCO"/>
+        <segue reference="ICe-oA-hNo"/>
         <segue reference="niu-JJ-pUi"/>
     </inferredMetricsTieBreakers>
 </document>
