@@ -11,5 +11,6 @@
 
 @interface NotesViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextView *notesText;
+@property (nonatomic, strong) NSString *noteString;
 
 @end

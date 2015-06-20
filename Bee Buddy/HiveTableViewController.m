@@ -141,6 +141,8 @@
         inspectionTableViewController.cBroodSelected = inspection.cappedBSelected.boolValue;
         inspectionTableViewController.cHoneySelected = inspection.cappedHoneySelected.boolValue;
         
+        inspectionTableViewController.noteString = inspection.note;
+        
     }
 }
 

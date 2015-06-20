@@ -333,7 +333,10 @@
 //        NotesViewController *notesViewController = [segue destinationViewController];
         
         //NSLog(@"Segue Activated");
-       
+        NotesViewController *notesViewController = (NotesViewController *)segue.destinationViewController;
+        if (self.noteString) {
+            notesViewController.noteString = self.noteString;
+        }
        
     }
 }

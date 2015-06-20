@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.notesText.text = self.noteString;
     // Do any additional setup after loading the view.
 }
 
