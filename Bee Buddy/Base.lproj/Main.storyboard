@@ -365,7 +365,7 @@
             </objects>
             <point key="canvasLocation" x="1007" y="-388"/>
         </scene>
-        <!--Hive 1-->
+        <!--Hive Table View Controller-->
         <scene sceneID="D0L-NK-54G">
             <objects>
                 <viewController id="C2q-gs-tgk" customClass="HiveTableViewController" sceneMemberID="viewController">
@@ -435,7 +435,7 @@
                             <constraint firstItem="IV6-fJ-YiC" firstAttribute="top" secondItem="AQB-1c-z5m" secondAttribute="bottom" constant="-64" id="v7B-J5-NH5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Hive 1" id="yKU-Xu-DPG">
+                    <navigationItem key="navigationItem" id="yKU-Xu-DPG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DRj-fM-Bau">
                             <connections>
                                 <segue destination="GgQ-4o-ce5" kind="show" identifier="addNew" id="cQB-kP-t0d"/>
@@ -790,7 +790,7 @@
             </objects>
             <point key="canvasLocation" x="1795" y="-388"/>
         </scene>
-        <!--Hive 1-->
+        <!--Inspection Table View Controller-->
         <scene sceneID="fFv-gd-iDM">
             <objects>
                 <tableViewController id="GgQ-4o-ce5" customClass="InspectionTableViewController" sceneMemberID="viewController">
@@ -896,7 +896,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Hive 1" id="jlR-DS-8tq">
+                    <navigationItem key="navigationItem" id="jlR-DS-8tq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lRX-ss-44M">
                             <connections>
                                 <action selector="cancelButton:" destination="GgQ-4o-ce5" id="7oV-KL-qYb"/>
@@ -973,7 +973,7 @@
         <image name="honeycomb Background 1" width="223" height="257"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F2H-fC-lLr"/>
+        <segue reference="pbl-B8-VCO"/>
         <segue reference="niu-JJ-pUi"/>
     </inferredMetricsTieBreakers>
 </document>

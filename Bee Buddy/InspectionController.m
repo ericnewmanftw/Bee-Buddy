@@ -26,7 +26,8 @@
                     andCHoney:(BOOL)cHoneySelected
                       andNote:(NSString *)inspectionNotes
                      andImage:(NSData *)inspectionImage
-                      andDate:(NSDate *)inspectionDate{
+                      andDate:(NSDate *)inspectionDate
+                      andHive:(Hive *)hive{
     
     Inspection *inspection = [NSEntityDescription insertNewObjectForEntityForName:@"Inspection" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
@@ -49,7 +50,8 @@
     inspection.note = inspectionNotes;
     inspection.image = inspectionImage;
     inspection.date = inspectionDate;
-
+    
+    
     [self syncronize];
     
 }

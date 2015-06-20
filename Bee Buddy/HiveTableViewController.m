@@ -27,6 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = self.hive.name;
+    
+    
+    
     // Do any additional setup after loading the view.
 
    

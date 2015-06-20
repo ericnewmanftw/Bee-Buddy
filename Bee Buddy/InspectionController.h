@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Stack.h"
 #import "Inspection.h"
+#import "Hive.h"
 
 @interface InspectionController : NSObject
 
@@ -25,7 +26,8 @@
                     andCHoney:(BOOL)cHoneySelected
                       andNote:(NSString *)inspectionNotes
                      andImage:(NSData *)inspectionImage
-                      andDate:(NSDate *)inspectionDate;
+                      andDate:(NSDate *)inspectionDate
+                      andHive:(Hive *)hive;
 
 
 
