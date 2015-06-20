@@ -136,6 +136,10 @@
         inspectionTableViewController.navigationItem.title = dateString;
         
         inspectionTableViewController.queenSelected = inspection.queenSelected.boolValue;
+        inspectionTableViewController.eggsSelected = inspection.eggsSelected.boolValue;
+        inspectionTableViewController.oBroodSelected = inspection.openBSelected.boolValue;
+        inspectionTableViewController.cBroodSelected = inspection.cappedBSelected.boolValue;
+        inspectionTableViewController.cHoneySelected = inspection.cappedHoneySelected.boolValue;
         
     }
 }

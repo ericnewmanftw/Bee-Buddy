@@ -60,20 +60,18 @@
     
     UITableViewCell *cell = (UITableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
     
-    
-    
     switch (indexPath.row) {
         case 0:
-            if (cell.backgroundColor != [UIColor greenColor]) {
+            if (self.queenSelected == NO) {
                 [cell setBackgroundColor:[UIColor greenColor]];
                 self.queenSelected = YES;
             }else{
                 [cell setBackgroundColor:[UIColor whiteColor]];
-                self.queenSelected = NO;
+                 self.queenSelected = NO;
             }
             break;
         case 1:
-            if (cell.backgroundColor !=[UIColor greenColor]) {
+            if (self.eggsSelected == NO) {
                 [cell setBackgroundColor:[UIColor greenColor]];
                 self.eggsSelected = YES;
             }else{
@@ -82,7 +80,7 @@
             }
             break;
         case 2:
-            if (cell.backgroundColor != [UIColor greenColor]) {
+            if (self.oBroodSelected == NO) {
                 [cell setBackgroundColor:[UIColor greenColor]];
                 self.oBroodSelected = YES;
             }else{
@@ -91,7 +89,7 @@
             }
             break;
         case 3:
-            if (cell.backgroundColor != [UIColor greenColor]) {
+            if (self.cBroodSelected == NO) {
                 [cell setBackgroundColor:[UIColor greenColor]];
                 self.cBroodSelected = YES;
             }else{
@@ -100,7 +98,7 @@
             }
             break;
         case 4:
-            if (cell.backgroundColor != [UIColor greenColor]) {
+            if (self.cHoneySelected == NO){
                 [cell setBackgroundColor:[UIColor greenColor]];
                 self.cHoneySelected = YES;
             }else{
@@ -108,10 +106,62 @@
                 self.cHoneySelected = NO;
             }
             break;
+
             
         default:
             break;
     }
+    
+//    switch (indexPath.row) {
+//        case 0:
+//            if (cell.backgroundColor != [UIColor greenColor]) {
+//                [cell setBackgroundColor:[UIColor greenColor]];
+//                self.queenSelected = YES;
+//            }else{
+//                [cell setBackgroundColor:[UIColor whiteColor]];
+//                self.queenSelected = NO;
+//            }
+//            break;
+//        case 1:
+//            if (cell.backgroundColor !=[UIColor greenColor]) {
+//                [cell setBackgroundColor:[UIColor greenColor]];
+//                self.eggsSelected = YES;
+//            }else{
+//                [cell setBackgroundColor:[UIColor whiteColor]];
+//                self.eggsSelected = NO;
+//            }
+//            break;
+//        case 2:
+//            if (cell.backgroundColor != [UIColor greenColor]) {
+//                [cell setBackgroundColor:[UIColor greenColor]];
+//                self.oBroodSelected = YES;
+//            }else{
+//                [cell setBackgroundColor:[UIColor whiteColor]];
+//                self.oBroodSelected = NO;
+//            }
+//            break;
+//        case 3:
+//            if (cell.backgroundColor != [UIColor greenColor]) {
+//                [cell setBackgroundColor:[UIColor greenColor]];
+//                self.cBroodSelected = YES;
+//            }else{
+//                [cell setBackgroundColor:[UIColor whiteColor]];
+//                self.cBroodSelected = NO;
+//            }
+//            break;
+//        case 4:
+//            if (cell.backgroundColor != [UIColor greenColor]) {
+//                [cell setBackgroundColor:[UIColor greenColor]];
+//                self.cHoneySelected = YES;
+//            }else{
+//                [cell setBackgroundColor:[UIColor whiteColor]];
+//                self.cHoneySelected = NO;
+//            }
+//            break;
+//            
+//        default:
+//            break;
+//    }
 
 }
 
@@ -123,21 +173,69 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if (indexPath.row < 5) {
+    if (indexPath.row == 0) {
         UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
         basicCell.textLabel.text = self.inspectionItems[indexPath.row];
+        if (self.queenSelected == NO) {
+            [basicCell setBackgroundColor:[UIColor whiteColor]];
+        }else{
+            [basicCell setBackgroundColor:[UIColor greenColor]];
+        }
         return basicCell;
+        
+    }else if (indexPath.row == 1){
+        UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
+        basicCell.textLabel.text = self.inspectionItems[indexPath.row];
+        if (self.eggsSelected == NO) {
+            [basicCell setBackgroundColor:[UIColor whiteColor]];
+        }else{
+            [basicCell setBackgroundColor:[UIColor greenColor]];
+        }
+        return basicCell;
+        
+    }else if (indexPath.row == 2){
+        UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
+        basicCell.textLabel.text = self.inspectionItems[indexPath.row];
+        if (self.oBroodSelected == NO) {
+            [basicCell setBackgroundColor:[UIColor whiteColor]];
+        }else{
+            [basicCell setBackgroundColor:[UIColor greenColor]];
+        }
+        return basicCell;
+        
+    }else if (indexPath.row == 3){
+        UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
+        basicCell.textLabel.text = self.inspectionItems[indexPath.row];
+        if (self.cBroodSelected == NO) {
+            [basicCell setBackgroundColor:[UIColor whiteColor]];
+        }else{
+            [basicCell setBackgroundColor:[UIColor greenColor]];
+        }
+        return basicCell;
+        
+    }else if (indexPath.row == 4){
+        UITableViewCell *basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
+        basicCell.textLabel.text = self.inspectionItems[indexPath.row];
+        if (self.cHoneySelected == NO) {
+            [basicCell setBackgroundColor:[UIColor whiteColor]];
+        }else{
+            [basicCell setBackgroundColor:[UIColor greenColor]];
+        }
+        return basicCell;
+        
     }
     else if (indexPath.row == 5){
         UITableViewCell *notesCell = [tableView dequeueReusableCellWithIdentifier:@"notesCell"];
         notesCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return notesCell;
+        
     }else if (indexPath.row == 6){
         
         ImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
         imageCell.delegate = self;
         
         return imageCell;
+        
     }else{
         UITableViewCell *deleteCell = [tableView dequeueReusableCellWithIdentifier:@"deleteCell"];
         return deleteCell;
