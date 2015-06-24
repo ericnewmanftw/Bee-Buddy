@@ -15,7 +15,8 @@
 
 
 
-@interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *sections;
 @property (nonatomic, strong) NSArray *dates;
@@ -29,7 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5;
+    lpgr.delegate = self;
+    [self.tableView addGestureRecognizer:lpgr];
     // Do any additional setup after loading the view.
 
    
@@ -102,6 +106,25 @@
 
         return [UIImage imageNamed:@"Hive"].size.height + 20.0;
 
+}
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    
+    CGPoint p = [gestureRecognizer locationInView:self.tableView];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    
+    if (indexPath == nil) {
+        NSLog(@"Couldn't find Index Path");
+    }else{
+        [[InspectionController sharedInstance] removeInspection:[InspectionController sharedInstance].inspections[indexPath.item]];
+    }
+    [self.tableView reloadData];
+    
+    
 }
 
 #pragma mark - Navigation
