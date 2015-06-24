@@ -69,10 +69,15 @@
                HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
         
                 Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
-                hiveCell.hiveLabel.text = hive.name;
-        
-                return hiveCell;
-        
+                //hiveCell.hiveLabel.text = hive.name;
+        if (hive.apiary == NULL) {
+            hiveCell.hiveLabel.text = hive.name;
+            return hiveCell;
+        }else{
+            return nil;
+        }
+    
+    
     }else{
         UICollectionViewCell *createNew = [collectionView dequeueReusableCellWithReuseIdentifier:@"createNew" forIndexPath:indexPath];
         
@@ -133,6 +138,7 @@
 //}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
     if ([segue.identifier isEqualToString:@"apiary"]) {
         ApiaryViewController *apiaryViewController = (ApiaryViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];

@@ -12,6 +12,7 @@
 #import "NewHiveInApiaryViewController.h"
 #import "HiveController.h"
 #import "HiveViewController.h"
+#import "ApiaryController.h"
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
@@ -88,10 +89,15 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-//    if ([segue.identifier isEqualToString:@"presentNewHive"]) {
-//        NewHiveInApiaryViewController *newHive = segue.destinationViewController;
-//        
-//    }
+    if ([segue.identifier isEqualToString:@"presentNewHive"]) {
+        NewHiveInApiaryViewController *newHive = segue.destinationViewController;
+        
+        newHive.apiary = self.apiary;
+        
+        
+        
+    }
+    
 
     if([segue.identifier isEqualToString:@"apiaryHive"]){
         
