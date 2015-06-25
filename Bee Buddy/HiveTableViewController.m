@@ -12,6 +12,7 @@
 #import "InspectionController.h"
 #import "Stack.h"
 #import "InspectionTableViewController.h"
+#import "Inspection.h"
 
 
 
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *sections;
 @property (nonatomic, strong) NSArray *dates;
+
 
 
 
@@ -43,7 +45,7 @@
 //    //This will show when an appointment is logged.
 //    self.dates = @[@"April 25th", @"May 6th"];
 
-    
+    //self.inspectionsSet = self.hive.inspections;
     
 }
 
@@ -58,6 +60,7 @@
 //    if ([InspectionController sharedInstance].inspections.count == 0) {
 //        return 0;
 //    }else{
+
     InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
     
     Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
@@ -65,11 +68,19 @@
     [format setDateFormat:@"MMM-dd"];
     NSString *dateString = [format stringFromDate:inspection.date];
     
-    cell.date.text = [NSString stringWithFormat:@"%@",dateString];
-    cell.notes.text = inspection.note;
-    
-    return cell;
-    
+    if (inspection != nil) {
+        cell.date.text = [NSString stringWithFormat:@"%@",dateString];
+        cell.notes.text = inspection.note;
+        
+        return cell;
+    }else{
+        return nil;
+    }
+//    cell.date.text = [NSString stringWithFormat:@"%@",dateString];
+//    cell.notes.text = inspection.note;
+//    
+//    return cell;
+//    
   
 }
 
@@ -165,6 +176,9 @@
         inspectionTableViewController.cHoneySelected = inspection.cappedHoneySelected.boolValue;
         
         inspectionTableViewController.noteString = inspection.note;
+        
+        inspectionTableViewController.hive = self.hive;
+    
         
     }
 }

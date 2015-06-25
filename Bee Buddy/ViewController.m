@@ -162,6 +162,9 @@
         
         hiveTableViewController.hive = hive;
         hiveTableViewController.navigationItem.title = hive.name;
+        hiveTableViewController.inspectionsSet = hive.inspections;
+        
+        
         
         
         

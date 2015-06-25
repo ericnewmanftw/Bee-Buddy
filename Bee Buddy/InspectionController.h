@@ -14,6 +14,7 @@
 @interface InspectionController : NSObject
 
 @property (nonatomic, strong) NSArray *inspections;
+@property (nonatomic, strong) Hive *inspectionHive;
 
 +(InspectionController  *)sharedInstance;
 
