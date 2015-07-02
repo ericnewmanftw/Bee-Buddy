@@ -22,9 +22,6 @@
 @property (nonatomic, strong) NSArray *sections;
 @property (nonatomic, strong) NSArray *dates;
 
-
-
-
 @end
 
 @implementation HiveTableViewController
@@ -36,6 +33,7 @@
     lpgr.minimumPressDuration = .5;
     lpgr.delegate = self;
     [self.tableView addGestureRecognizer:lpgr];
+    
     // Do any additional setup after loading the view.
 
    
@@ -45,7 +43,7 @@
 //    //This will show when an appointment is logged.
 //    self.dates = @[@"April 25th", @"May 6th"];
 
-    //self.inspectionsSet = self.hive.inspections;
+
     
 }
 
@@ -68,7 +66,7 @@
 
     InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
     
-    Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
+    Inspection *inspection = self.hive.inspections[indexPath.row];
     NSDateFormatter *format = [NSDateFormatter new];
     [format setDateFormat:@"MMM-dd"];
     NSString *dateString = [format stringFromDate:inspection.date];
@@ -108,7 +106,7 @@
             return 0;
             break;
         case 1:
-            return [InspectionController sharedInstance].inspections.count;
+            return self.hive.inspections.count;
             break;
             
         default:
