@@ -68,7 +68,7 @@
 
     InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
     
-    Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
+    Inspection *inspection = self.hive.inspections[indexPath.row];
     NSDateFormatter *format = [NSDateFormatter new];
     [format setDateFormat:@"MMM-dd"];
     NSString *dateString = [format stringFromDate:inspection.date];
@@ -108,7 +108,7 @@
             return 0;
             break;
         case 1:
-            return [InspectionController sharedInstance].inspections.count;
+            return self.hive.inspections.count;
             break;
             
         default:
@@ -157,7 +157,11 @@
 //}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
-    
+    if ([segue.identifier isEqualToString:@"addNew"]) {
+        InspectionTableViewController *inspectionTableViewController = (InspectionTableViewController *)segue.destinationViewController;
+        
+        inspectionTableViewController.hive = self.hive;
+    }
     if([segue.identifier isEqualToString:@"inspection"]){
 
 

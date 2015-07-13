@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Apiary" representedClassName="Apiary" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="hives" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Hive" inverseName="apiary" inverseEntity="Hive" syncable="YES"/>
+        <relationship name="hives" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Hive" inverseName="apiary" inverseEntity="Hive" syncable="YES"/>
     </entity>
     <entity name="Hive" representedClassName="Hive" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +23,7 @@
         <relationship name="hive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hive" inverseName="inspections" inverseEntity="Hive" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Apiary" positionX="-333" positionY="18" width="128" height="88"/>
+        <element name="Apiary" positionX="-333" positionY="18" width="128" height="90"/>
         <element name="Hive" positionX="-128" positionY="21" width="128" height="103"/>
         <element name="Inspection" positionX="79" positionY="36" width="128" height="180"/>
     </elements>
