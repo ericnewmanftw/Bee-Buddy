@@ -124,14 +124,50 @@
     if (indexPath == nil){
         NSLog(@"couldn't find index path");
     } else if (indexPath.section == 0){
-        [[ApiaryController sharedInstance] removeApiary:[ApiaryController sharedInstance].apiaries[indexPath.item]];
+        //[[ApiaryController sharedInstance] removeApiary:[ApiaryController sharedInstance].apiaries[indexPath.item]];
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"Are you sure you would like to delete this apiary?" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
+            NSLog(@"Canceled");
+        }]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            [[ApiaryController sharedInstance] removeApiary:[ApiaryController sharedInstance].apiaries[indexPath.item]];
+            [self.collectionView reloadData];
+        }]];
+        [self presentViewController:alertController animated:YES completion:nil];
     }else if (indexPath.section == 1){
 
-        [[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
+        //[[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
+        UIAlertController *hiveDeleteAlertController = [UIAlertController alertControllerWithTitle:nil message:@"Are you sure you would like to delete this hive?" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [hiveDeleteAlertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
+            nil;
+        }]];
+        
+        [hiveDeleteAlertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction *action) {
+            [[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
+            [self.collectionView reloadData];
+        }]];
+        
+        [self presentViewController:hiveDeleteAlertController animated:YES completion:nil];
 
     }
     [self.collectionView reloadData];
 }
+
+//UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[self randomTitle] message:@"You only have 2 options:" preferredStyle:UIAlertControllerStyleAlert];
+//
+//[alertController addAction:[UIAlertAction actionWithTitle:@"Never again!" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//    NSLog(@"I'll never show the alert again.");
+//}]];
+//
+//[alertController addAction:[UIAlertAction actionWithTitle:@"Hit me baby" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+//    [self presentAlertViewController];
+//}]];
+//
+//[self presentViewController:alertController animated:YES completion:nil];
 
 //-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //    NSLog(@"Working");
