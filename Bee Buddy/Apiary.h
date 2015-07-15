@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *hives;
+@property (nonatomic, retain) NSOrderedSet *hives;
 @end
 
 @interface Apiary (CoreDataGeneratedAccessors)

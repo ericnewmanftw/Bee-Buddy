@@ -12,6 +12,7 @@
 @interface HiveTableViewController : UIViewController
 
 @property (nonatomic, strong) Hive *hive;
+@property (nonatomic, strong) NSOrderedSet *inspectionsSet;
 
 @end
 

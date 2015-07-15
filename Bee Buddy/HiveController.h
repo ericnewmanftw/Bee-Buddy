@@ -17,6 +17,7 @@
 +(HiveController *)sharedInstance;
 
 -(void)removeHive:(Hive *)hive;
+
 -(void)addHiveWithData:(NSString *)hiveName
            andLocation:(NSString *)hiveLocation;
 

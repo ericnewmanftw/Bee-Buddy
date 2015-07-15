@@ -12,15 +12,15 @@
 #import "InspectionController.h"
 #import "Stack.h"
 #import "InspectionTableViewController.h"
+#import "Inspection.h"
 
 
 
-@interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *sections;
 @property (nonatomic, strong) NSArray *dates;
-
-
 
 @end
 
@@ -29,6 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5;
+    lpgr.delegate = self;
+    [self.tableView addGestureRecognizer:lpgr];
     
     // Do any additional setup after loading the view.
 
@@ -39,7 +43,7 @@
 //    //This will show when an appointment is logged.
 //    self.dates = @[@"April 25th", @"May 6th"];
 
-    
+
     
 }
 
@@ -48,24 +52,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
 //    //NSString *date = self.dates[indexPath.row];
 //    if ([InspectionController sharedInstance].inspections.count == 0) {
 //        return 0;
 //    }else{
+
     InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
     
-    Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
+    Inspection *inspection = self.hive.inspections[indexPath.row];
     NSDateFormatter *format = [NSDateFormatter new];
     [format setDateFormat:@"MMM-dd"];
     NSString *dateString = [format stringFromDate:inspection.date];
     
-    cell.date.text = [NSString stringWithFormat:@"%@",dateString];
-    cell.notes.text = inspection.note;
-    
-    return cell;
-    
+    if (inspection != nil) {
+        cell.date.text = [NSString stringWithFormat:@"%@",dateString];
+        cell.notes.text = inspection.note;
+        
+        return cell;
+    }else{
+        return nil;
+    }
+//    cell.date.text = [NSString stringWithFormat:@"%@",dateString];
+//    cell.notes.text = inspection.note;
+//    
+//    return cell;
+//    
   
 }
 
@@ -88,7 +106,7 @@
             return 0;
             break;
         case 1:
-            return [InspectionController sharedInstance].inspections.count;
+            return self.hive.inspections.count;
             break;
             
         default:
@@ -102,6 +120,25 @@
 
         return [UIImage imageNamed:@"Hive"].size.height + 20.0;
 
+}
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    
+    CGPoint p = [gestureRecognizer locationInView:self.tableView];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    
+    if (indexPath == nil) {
+        NSLog(@"Couldn't find Index Path");
+    }else{
+        [[InspectionController sharedInstance] removeInspection:[InspectionController sharedInstance].inspections[indexPath.item]];
+    }
+    [self.tableView reloadData];
+    
+    
 }
 
 #pragma mark - Navigation
@@ -118,7 +155,11 @@
 //}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
-    
+    if ([segue.identifier isEqualToString:@"addNew"]) {
+        InspectionTableViewController *inspectionTableViewController = (InspectionTableViewController *)segue.destinationViewController;
+        
+        inspectionTableViewController.hive = self.hive;
+    }
     if([segue.identifier isEqualToString:@"inspection"]){
 
 
@@ -136,6 +177,15 @@
         inspectionTableViewController.navigationItem.title = dateString;
         
         inspectionTableViewController.queenSelected = inspection.queenSelected.boolValue;
+        inspectionTableViewController.eggsSelected = inspection.eggsSelected.boolValue;
+        inspectionTableViewController.oBroodSelected = inspection.openBSelected.boolValue;
+        inspectionTableViewController.cBroodSelected = inspection.cappedBSelected.boolValue;
+        inspectionTableViewController.cHoneySelected = inspection.cappedHoneySelected.boolValue;
+        
+        inspectionTableViewController.noteString = inspection.note;
+        
+        inspectionTableViewController.hive = self.hive;
+    
         
     }
 }

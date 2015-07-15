@@ -59,6 +59,9 @@
     NSFetchRequest *hiveRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hive"];
     hiveRequest.predicate = [NSPredicate predicateWithFormat:@"apiary = NULL"];
     
+    [hiveRequest setReturnsObjectsAsFaults:NO];
+    
+    
     NSArray *hives = [[Stack sharedInstance].managedObjectContext executeFetchRequest:hiveRequest error:NULL];
     
     return hives;
