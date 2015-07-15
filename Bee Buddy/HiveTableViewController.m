@@ -22,9 +22,6 @@
 @property (nonatomic, strong) NSArray *sections;
 @property (nonatomic, strong) NSArray *dates;
 
-
-
-
 @end
 
 @implementation HiveTableViewController
@@ -36,6 +33,7 @@
     lpgr.minimumPressDuration = .5;
     lpgr.delegate = self;
     [self.tableView addGestureRecognizer:lpgr];
+    
     // Do any additional setup after loading the view.
 
    
@@ -45,7 +43,7 @@
 //    //This will show when an appointment is logged.
 //    self.dates = @[@"April 25th", @"May 6th"];
 
-    //self.inspectionsSet = self.hive.inspections;
+
     
 }
 
