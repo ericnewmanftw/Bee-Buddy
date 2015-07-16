@@ -128,6 +128,10 @@
     }
 
 }
+- (IBAction)cancelButton:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -172,6 +176,11 @@
         InspectionTableViewController *inspectionTableViewController = (InspectionTableViewController *)segue.destinationViewController;
         
         inspectionTableViewController.hive = self.hive;
+        NSDateFormatter *format = [NSDateFormatter new];
+        [format setDateFormat:@"MMM-dd"];
+        NSString *dateString = [format stringFromDate:[NSDate date]];
+        
+        inspectionTableViewController.navigationItem.title = dateString;
     }
     if([segue.identifier isEqualToString:@"inspection"]){
 

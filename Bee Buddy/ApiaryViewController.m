@@ -114,6 +114,10 @@
     [self.collectionView reloadData];
 
 }
+- (IBAction)cancelButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 #pragma mark - Navigation
 

@@ -33,7 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    self.navigationItem.title = @"The Bee Buddy";
+    
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5;
     lpgr.delegate = self;
@@ -59,13 +60,12 @@
         if (apiaryCell !=nil) {
             return apiaryCell;
         }else{
-            UICollectionViewCell *createNew = [collectionView dequeueReusableCellWithReuseIdentifier:@"createNew" forIndexPath:indexPath];
-            return createNew;
+            return nil;
         }
         
 
         
-    }else if (indexPath.section ==1){
+    }else{
                HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
         
                 Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
@@ -78,10 +78,6 @@
         }
     
     
-    }else{
-        UICollectionViewCell *createNew = [collectionView dequeueReusableCellWithReuseIdentifier:@"createNew" forIndexPath:indexPath];
-        
-        return createNew;
     }
 
 }
@@ -101,7 +97,7 @@
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 3;
+    return 2;
     
 }
 

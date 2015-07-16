@@ -23,6 +23,7 @@
 		9B6A49CB1B0E654C0096E552 /* ApiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49CA1B0E654C0096E552 /* ApiaryViewController.m */; };
 		9B6A49CE1B0EC9910096E552 /* HiveCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49CD1B0EC9910096E552 /* HiveCollectionViewCell.m */; };
 		9B6A49D61B0FC9740096E552 /* CreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49D51B0FC9740096E552 /* CreationViewController.m */; };
+		9B6F29BF1B57EAB8001AAD7E /* HiveOrApiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F29BE1B57EAB8001AAD7E /* HiveOrApiaryViewController.m */; };
 		9B858A271B574041006BE1AC /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B858A261B574041006BE1AC /* Inspection.m */; };
 		9BC496991B10F16800A4DA78 /* HiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC496981B10F16800A4DA78 /* HiveController.m */; };
 		9BC4969C1B10F4BF00A4DA78 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4969B1B10F4BE00A4DA78 /* Stack.m */; };
@@ -85,6 +86,8 @@
 		9B6A49CD1B0EC9910096E552 /* HiveCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveCollectionViewCell.m; sourceTree = "<group>"; };
 		9B6A49D41B0FC9740096E552 /* CreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationViewController.h; sourceTree = "<group>"; };
 		9B6A49D51B0FC9740096E552 /* CreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationViewController.m; sourceTree = "<group>"; };
+		9B6F29BD1B57EAB8001AAD7E /* HiveOrApiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveOrApiaryViewController.h; sourceTree = "<group>"; };
+		9B6F29BE1B57EAB8001AAD7E /* HiveOrApiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveOrApiaryViewController.m; sourceTree = "<group>"; };
 		9B858A251B574041006BE1AC /* Inspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
 		9B858A261B574041006BE1AC /* Inspection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
 		9BC496971B10F16800A4DA78 /* HiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveController.h; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				9B65F76B1B1FCE0B002532BF /* ApiaryController.m */,
 				9B6A49C91B0E654C0096E552 /* ApiaryViewController.h */,
 				9B6A49CA1B0E654C0096E552 /* ApiaryViewController.m */,
+				9B6F29BD1B57EAB8001AAD7E /* HiveOrApiaryViewController.h */,
+				9B6F29BE1B57EAB8001AAD7E /* HiveOrApiaryViewController.m */,
 				9B6A49D41B0FC9740096E552 /* CreationViewController.h */,
 				9B6A49D51B0FC9740096E552 /* CreationViewController.m */,
 				9BC4969D1B11053900A4DA78 /* HiveCreationViewController.h */,
@@ -404,6 +409,7 @@
 				9BC496AE1B1A1BFD00A4DA78 /* Hive.m in Sources */,
 				9BD41D6B1B27D8FB00205A60 /* InspectionController.m in Sources */,
 				9BC496A81B17A7A700A4DA78 /* InspectionTableViewCell.m in Sources */,
+				9B6F29BF1B57EAB8001AAD7E /* HiveOrApiaryViewController.m in Sources */,
 				9B6A49CE1B0EC9910096E552 /* HiveCollectionViewCell.m in Sources */,
 				9BE2D5101B1A3ABC0007EBEE /* PurchasedDataController.m in Sources */,
 				9B6A49CB1B0E654C0096E552 /* ApiaryViewController.m in Sources */,

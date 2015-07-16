@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *locationField;
 @property (weak, nonatomic) IBOutlet UITextField *numberField;
+@property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 
 
 @end
@@ -23,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +43,10 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (IBAction)cancelButton:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
