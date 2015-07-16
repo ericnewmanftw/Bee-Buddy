@@ -124,8 +124,7 @@
     if (indexPath == nil){
         NSLog(@"couldn't find index path");
     } else if (indexPath.section == 0){
-        //[[ApiaryController sharedInstance] removeApiary:[ApiaryController sharedInstance].apiaries[indexPath.item]];
-        
+
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"Are you sure you would like to delete this apiary?" preferredStyle:UIAlertControllerStyleAlert];
         
         [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {

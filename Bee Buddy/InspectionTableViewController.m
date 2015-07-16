@@ -16,11 +16,7 @@
 
 
 @property (nonatomic, strong) NSArray *inspectionItems;
-
-
-
-
-
+@property (nonatomic, strong) NSString *dateString;
 
 
 @end
@@ -34,8 +30,17 @@
 
     self.inspectionItems = @[@"Queen", @"Eggs", @"Open Brood", @"Capped Brood", @"Capped Honey"];
     
-    
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+
+//    if (self.person.photo) {
+//        profileImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.person.photo]];
+//        
+//    } else {
+//        [cell.button setTitle:@"Add Photo" forState:UIControlStateNormal];
+//        profileImage = [UIImage imageWithData:self.photo];
+//    }
+//    
+//    [cell.button setImage:profileImage forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -273,8 +278,25 @@
     ImageTableViewCell *buttonCell = [ImageTableViewCell new];
     [buttonCell.button setBackgroundImage:chosenImage forState:UIControlStateNormal];
     
+    NSDate *currentDate = [NSDate date];
+    
+    NSString *dateString = [NSString stringWithFormat:@"%@", currentDate];
+    
+    [dateString writeToFile:[self documentsPathForFileName:dateString] atomically:YES];
+    
+    self.noteString = dateString;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+-(NSString *)documentsPathForFileName:(NSString *)dateString{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    return [documentsPath stringByAppendingPathComponent:dateString];
     
 }
 
