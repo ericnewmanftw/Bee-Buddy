@@ -102,6 +102,7 @@
                 self.cHoneySelected = NO;
             }
             break;
+        
 
             
         default:
@@ -264,10 +265,39 @@
 
 - (IBAction)saveButtonTapped:(id)sender {
     
+    if (self.inspection) {
+        self.inspection.queenSelected = [NSNumber numberWithBool:self.queenSelected];
+        self.inspection.eggsSelected = [NSNumber numberWithBool:self.eggsSelected];
+        self.inspection.openBSelected = [NSNumber numberWithBool:self.oBroodSelected];
+        self.inspection.cappedBSelected = [NSNumber numberWithBool:self.cBroodSelected];
+        self.inspection.cappedHoneySelected = [NSNumber numberWithBool:self.cHoneySelected];
+        self.inspection.note = self.noteString;
+        self.inspection.image = self.dateString;
+        
+        [[InspectionController sharedInstance] syncronize];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }else{
+    
     [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:self.noteString andImage:self.dateString andDate:[NSDate date] andHive:self.hive];
     //remember to add the hive.
     [self.navigationController popViewControllerAnimated:YES];
+    }
     
+//    NSNumber *cBroodAsNumber = [NSNumber numberWithBool:cBroodSelected];
+//    inspection.cappedBSelected = cBroodAsNumber;
+//    
+//        if (self.entry) {
+//            self.entry.title = self.titleTextField.text;
+//            self.entry.bodyText = self.bodyTextView.text;
+//            self.entry.timestamp = [NSDate date];
+//            
+//            [[EntryController sharedInstance] save];
+//        } else {
+//            self.entry = [[EntryController sharedInstance] createEntryWithTitle:self.titleTextField.text bodyText:self.bodyTextView.text];
+//        }
+//    }
 }
 
 /*

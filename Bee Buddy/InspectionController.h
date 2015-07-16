@@ -30,6 +30,7 @@
                       andDate:(NSDate *)inspectionDate
                       andHive:(Hive *)hive;
 
+-(void)syncronize;
 
 
 @end

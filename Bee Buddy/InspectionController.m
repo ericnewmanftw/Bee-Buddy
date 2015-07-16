@@ -57,6 +57,7 @@
     
 }
 
+
 -(void)syncronize {
     [[Stack sharedInstance].managedObjectContext save:NULL];
 }
