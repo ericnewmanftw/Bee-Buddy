@@ -49,12 +49,24 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+
+    if (indexPath.section == 0) {
+    
     HiveCollectionViewCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseHiveCell" forIndexPath:indexPath];
-    Hive *hive = self.hiveArray[indexPath.row];
-    hiveCell.hiveLabel.text = hive.name;
+    Hive *hive = self.apiary.hives[indexPath.row];
     
+    if (hive.apiary == self.apiary) {
+        hiveCell.hiveLabel.text = hive.name;
+        return hiveCell;
+    }else{
+        return nil;
     
-    return hiveCell;
+    }
+    
+    }else{
+        return nil;
+    }
+
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -74,6 +86,8 @@
 
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer{
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
         CGPoint p = [gestureRecognizer locationInView:self.collectionView];
         
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
@@ -81,12 +95,25 @@
         if (indexPath == nil) {
             NSLog(@"couldn't find index path");
         }else if (indexPath.section ==0){
-            [[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
+            
+            UIAlertController *hiveDeleteAlertController = [UIAlertController alertControllerWithTitle:nil message:@"Are you sure you would like to delete this hive?" preferredStyle:UIAlertControllerStyleAlert];
+            
+            [hiveDeleteAlertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
+                nil;
+            }]];
+            
+            [hiveDeleteAlertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction *action) {
+                [[HiveController sharedInstance] removeHive:self.apiary.hives[indexPath.item]];
+                [self.collectionView reloadData];
+            }]];
+            
+            [self presentViewController:hiveDeleteAlertController animated:YES completion:nil];
         }
-    }
+
+    
+    [self.collectionView reloadData];
+
 }
-
-
 
 #pragma mark - Navigation
 

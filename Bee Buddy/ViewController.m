@@ -111,8 +111,8 @@
     [self.collectionView reloadData];
 }
 
--(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
-{
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer{
+    
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
         return;
     }
@@ -139,7 +139,7 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }else if (indexPath.section == 1){
 
-        //[[HiveController sharedInstance] removeHive:[HiveController sharedInstance].hives[indexPath.item]];
+
         UIAlertController *hiveDeleteAlertController = [UIAlertController alertControllerWithTitle:nil message:@"Are you sure you would like to delete this hive?" preferredStyle:UIAlertControllerStyleAlert];
         
         [hiveDeleteAlertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
