@@ -16,7 +16,6 @@
 
 
 @property (nonatomic, strong) NSArray *inspectionItems;
-@property (nonatomic, strong) NSString *dateString;
 
 
 @end
@@ -32,15 +31,7 @@
     
 
 
-//    if (self.person.photo) {
-//        profileImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.person.photo]];
-//        
-//    } else {
-//        [cell.button setTitle:@"Add Photo" forState:UIControlStateNormal];
-//        profileImage = [UIImage imageWithData:self.photo];
-//    }
-//    
-//    [cell.button setImage:profileImage forState:UIControlStateNormal];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,56 +108,7 @@
             break;
     }
     
-//    switch (indexPath.row) {
-//        case 0:
-//            if (cell.backgroundColor != [UIColor greenColor]) {
-//                [cell setBackgroundColor:[UIColor greenColor]];
-//                self.queenSelected = YES;
-//            }else{
-//                [cell setBackgroundColor:[UIColor whiteColor]];
-//                self.queenSelected = NO;
-//            }
-//            break;
-//        case 1:
-//            if (cell.backgroundColor !=[UIColor greenColor]) {
-//                [cell setBackgroundColor:[UIColor greenColor]];
-//                self.eggsSelected = YES;
-//            }else{
-//                [cell setBackgroundColor:[UIColor whiteColor]];
-//                self.eggsSelected = NO;
-//            }
-//            break;
-//        case 2:
-//            if (cell.backgroundColor != [UIColor greenColor]) {
-//                [cell setBackgroundColor:[UIColor greenColor]];
-//                self.oBroodSelected = YES;
-//            }else{
-//                [cell setBackgroundColor:[UIColor whiteColor]];
-//                self.oBroodSelected = NO;
-//            }
-//            break;
-//        case 3:
-//            if (cell.backgroundColor != [UIColor greenColor]) {
-//                [cell setBackgroundColor:[UIColor greenColor]];
-//                self.cBroodSelected = YES;
-//            }else{
-//                [cell setBackgroundColor:[UIColor whiteColor]];
-//                self.cBroodSelected = NO;
-//            }
-//            break;
-//        case 4:
-//            if (cell.backgroundColor != [UIColor greenColor]) {
-//                [cell setBackgroundColor:[UIColor greenColor]];
-//                self.cHoneySelected = YES;
-//            }else{
-//                [cell setBackgroundColor:[UIColor whiteColor]];
-//                self.cHoneySelected = NO;
-//            }
-//            break;
-//            
-//        default:
-//            break;
-//    }
+
 
 }
 
@@ -238,6 +180,23 @@
         
         ImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
         imageCell.delegate = self;
+        UIImage *inspectionImage;
+        
+        if (self.dateString) {
+            inspectionImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.dateString]];
+        }
+        
+        [imageCell.button setImage:inspectionImage forState:UIControlStateNormal];
+        
+        //    if (self.person.photo) {
+        //        profileImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.person.photo]];
+        //
+        //    } else {
+        //        [cell.button setTitle:@"Add Photo" forState:UIControlStateNormal];
+        //        profileImage = [UIImage imageWithData:self.photo];
+        //    }
+        //
+        //    [cell.button setImage:profileImage forState:UIControlStateNormal];
         
         return imageCell;
         
@@ -271,18 +230,21 @@
     [self presentViewController:picker animated:YES completion:NULL];
     
 }
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    //[self setBackgroundImage:chosenImage forState:UIControlStateNormal];
+    NSData *chosenImage = info[UIImagePickerControllerEditedImage];
+    UIImage *chosenImageWithData = [UIImage imageWithData:chosenImage];
+
     ImageTableViewCell *buttonCell = [ImageTableViewCell new];
-    [buttonCell.button setBackgroundImage:chosenImage forState:UIControlStateNormal];
+
+    [buttonCell.button setImage:chosenImageWithData forState:UIControlStateNormal];
     
     NSDate *currentDate = [NSDate date];
     
     NSString *dateString = [NSString stringWithFormat:@"%@", currentDate];
     
-    [dateString writeToFile:[self documentsPathForFileName:dateString] atomically:YES];
+    [chosenImage writeToFile:[self documentsPathForFileName:dateString] atomically:YES];
     
     self.noteString = dateString;
     
@@ -302,7 +264,7 @@
 
 - (IBAction)saveButtonTapped:(id)sender {
     
-    [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:self.noteString andImage:NULL andDate:[NSDate date] andHive:self.hive];
+    [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:self.noteString andImage:self.dateString andDate:[NSDate date] andHive:self.hive];
     //remember to add the hive.
     [self.navigationController popViewControllerAnimated:YES];
     

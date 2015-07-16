@@ -23,6 +23,7 @@
 		9B6A49CB1B0E654C0096E552 /* ApiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49CA1B0E654C0096E552 /* ApiaryViewController.m */; };
 		9B6A49CE1B0EC9910096E552 /* HiveCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49CD1B0EC9910096E552 /* HiveCollectionViewCell.m */; };
 		9B6A49D61B0FC9740096E552 /* CreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A49D51B0FC9740096E552 /* CreationViewController.m */; };
+		9B858A271B574041006BE1AC /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B858A261B574041006BE1AC /* Inspection.m */; };
 		9BC496991B10F16800A4DA78 /* HiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC496981B10F16800A4DA78 /* HiveController.m */; };
 		9BC4969C1B10F4BF00A4DA78 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4969B1B10F4BE00A4DA78 /* Stack.m */; };
 		9BC4969F1B11053900A4DA78 /* HiveCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4969E1B11053900A4DA78 /* HiveCreationViewController.m */; };
@@ -31,7 +32,6 @@
 		9BC496A81B17A7A700A4DA78 /* InspectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC496A71B17A7A700A4DA78 /* InspectionTableViewCell.m */; };
 		9BC496AE1B1A1BFD00A4DA78 /* Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC496AD1B1A1BFD00A4DA78 /* Hive.m */; };
 		9BC496B41B1A1BFE00A4DA78 /* Apiary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC496B31B1A1BFE00A4DA78 /* Apiary.m */; };
-		9BD41D681B27D47800205A60 /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D671B27D47800205A60 /* Inspection.m */; };
 		9BD41D6B1B27D8FB00205A60 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D6A1B27D8FB00205A60 /* InspectionController.m */; };
 		9BD41D6E1B2A5F6600205A60 /* HiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D6D1B2A5F6600205A60 /* HiveViewController.m */; };
 		9BD41D701B2A5FC300205A60 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD41D6F1B2A5FC300205A60 /* ViewController.m */; };
@@ -85,6 +85,8 @@
 		9B6A49CD1B0EC9910096E552 /* HiveCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveCollectionViewCell.m; sourceTree = "<group>"; };
 		9B6A49D41B0FC9740096E552 /* CreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationViewController.h; sourceTree = "<group>"; };
 		9B6A49D51B0FC9740096E552 /* CreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationViewController.m; sourceTree = "<group>"; };
+		9B858A251B574041006BE1AC /* Inspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
+		9B858A261B574041006BE1AC /* Inspection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
 		9BC496971B10F16800A4DA78 /* HiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveController.h; sourceTree = "<group>"; };
 		9BC496981B10F16800A4DA78 /* HiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiveController.m; sourceTree = "<group>"; };
 		9BC4969A1B10F4BE00A4DA78 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
@@ -101,8 +103,6 @@
 		9BC496AD1B1A1BFD00A4DA78 /* Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hive.m; sourceTree = "<group>"; };
 		9BC496B21B1A1BFE00A4DA78 /* Apiary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apiary.h; sourceTree = "<group>"; };
 		9BC496B31B1A1BFE00A4DA78 /* Apiary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apiary.m; sourceTree = "<group>"; };
-		9BD41D661B27D47800205A60 /* Inspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
-		9BD41D671B27D47800205A60 /* Inspection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
 		9BD41D691B27D8FB00205A60 /* InspectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionController.h; sourceTree = "<group>"; };
 		9BD41D6A1B27D8FB00205A60 /* InspectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionController.m; sourceTree = "<group>"; };
 		9BD41D6C1B2A5F6600205A60 /* HiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiveViewController.h; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 				9B6A49BA1B0C0DC70096E552 /* Model.xcdatamodeld */,
 				9BC496B21B1A1BFE00A4DA78 /* Apiary.h */,
 				9BC496B31B1A1BFE00A4DA78 /* Apiary.m */,
-				9BD41D661B27D47800205A60 /* Inspection.h */,
-				9BD41D671B27D47800205A60 /* Inspection.m */,
+				9B858A251B574041006BE1AC /* Inspection.h */,
+				9B858A261B574041006BE1AC /* Inspection.m */,
 				9BC496AC1B1A1BFD00A4DA78 /* Hive.h */,
 				9BC496AD1B1A1BFD00A4DA78 /* Hive.m */,
 				9B43983F1AF16E2D005D6F3D /* Supporting Files */,
@@ -415,8 +415,8 @@
 				9B65F7691B1E2961002532BF /* ImageTableViewCell.m in Sources */,
 				9B65F76C1B1FCE0B002532BF /* ApiaryController.m in Sources */,
 				9B5C7BEE1B212D5000A4826A /* NewHiveInApiaryViewController.m in Sources */,
-				9BD41D681B27D47800205A60 /* Inspection.m in Sources */,
 				9BC4969F1B11053900A4DA78 /* HiveCreationViewController.m in Sources */,
+				9B858A271B574041006BE1AC /* Inspection.m in Sources */,
 				9BC496991B10F16800A4DA78 /* HiveController.m in Sources */,
 				9BC496A21B15505B00A4DA78 /* ApiaryCell.m in Sources */,
 				9BD41D701B2A5FC300205A60 /* ViewController.m in Sources */,

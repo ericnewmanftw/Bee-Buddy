@@ -20,6 +20,9 @@
 @property (nonatomic, assign) BOOL oBroodSelected;
 @property (nonatomic, assign) BOOL cBroodSelected;
 @property (nonatomic, assign) BOOL cHoneySelected;
+@property (nonatomic, strong) NSString *dateString;
+
+
 
 
 @end

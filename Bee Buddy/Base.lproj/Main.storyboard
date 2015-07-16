@@ -416,6 +416,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="date" destination="E1C-8I-lVW" id="sRq-z0-Udi"/>
+                                            <outlet property="image" destination="W5I-rq-Mp0" id="dAe-na-7zK"/>
                                             <outlet property="notes" destination="ck1-NL-r3F" id="QcV-wI-F1g"/>
                                             <segue destination="GgQ-4o-ce5" kind="show" identifier="inspection" id="niu-JJ-pUi"/>
                                         </connections>

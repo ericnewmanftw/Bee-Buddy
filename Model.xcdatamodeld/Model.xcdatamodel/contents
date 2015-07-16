@@ -16,7 +16,7 @@
         <attribute name="cappedHoneySelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="eggsSelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="openBSelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
         <attribute name="queenSelected" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>

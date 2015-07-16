@@ -74,6 +74,19 @@
     if (inspection != nil) {
         cell.date.text = [NSString stringWithFormat:@"%@",dateString];
         cell.notes.text = inspection.note;
+        if (inspection.image) {
+            //cell.image.image =
+        }
+        
+//        if (self.person.photo) {
+//            profileImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.person.photo]];
+//            
+//        } else {
+//            [cell.button setTitle:@"Add Photo" forState:UIControlStateNormal];
+//            profileImage = [UIImage imageWithData:self.photo];
+//        }
+//        
+//        [cell.button setImage:profileImage forState:UIControlStateNormal];
         
         return cell;
     }else{

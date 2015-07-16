@@ -1,9 +1,9 @@
 //
 //  Inspection.h
-//  Bee Buddy
+//  
 //
-//  Created by Eric Newman on 6/9/15.
-//  Copyright (c) 2015 Eric Newman. All rights reserved.
+//  Created by Eric Newman on 7/15/15.
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSNumber * cappedHoneySelected;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * eggsSelected;
-@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * note;
 @property (nonatomic, retain) NSNumber * openBSelected;
 @property (nonatomic, retain) NSNumber * queenSelected;

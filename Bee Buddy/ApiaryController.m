@@ -25,7 +25,7 @@
     Apiary *apiary = [NSEntityDescription insertNewObjectForEntityForName:@"Apiary" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     apiary.name = apiaryName;
     apiary.location = apiaryLocation;
-    apiary.hives = apiaryHives;
+    apiary.hives = [NSOrderedSet orderedSetWithSet:apiaryHives];
     
     [self syncronize];
      

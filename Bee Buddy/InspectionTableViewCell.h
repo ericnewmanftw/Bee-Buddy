@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *notes;
 @property (strong, nonatomic) IBOutlet UILabel *date;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
 
 @end

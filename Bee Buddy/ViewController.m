@@ -156,21 +156,7 @@
     [self.collectionView reloadData];
 }
 
-//UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[self randomTitle] message:@"You only have 2 options:" preferredStyle:UIAlertControllerStyleAlert];
-//
-//[alertController addAction:[UIAlertAction actionWithTitle:@"Never again!" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-//    NSLog(@"I'll never show the alert again.");
-//}]];
-//
-//[alertController addAction:[UIAlertAction actionWithTitle:@"Hit me baby" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-//    [self presentAlertViewController];
-//}]];
-//
-//[self presentViewController:alertController animated:YES completion:nil];
 
-//-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"Working");
-//}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -185,12 +171,6 @@
     
     if([segue.identifier isEqualToString:@"hive"]){
         
-//        HiveViewController *hiveViewController = (HiveViewController *)segue.destinationViewController;
-//        NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
-//        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
-//        
-        //hiveViewController.hive = hive;
-
         HiveTableViewController *hiveTableViewController = (HiveTableViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
         Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
