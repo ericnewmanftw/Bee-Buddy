@@ -53,7 +53,6 @@
     if (indexPath.section == 0) {
         
         ApiaryCell *apiaryCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"apiaryID" forIndexPath:indexPath];
-        
         Apiary *apiary = [ApiaryController sharedInstance].apiaries[indexPath.row];
         apiaryCell.apiaryLabel.text = apiary.name;
         
