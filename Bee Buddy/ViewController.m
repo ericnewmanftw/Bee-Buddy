@@ -19,12 +19,7 @@
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) NSArray *apiaryArray;
-@property (nonatomic, strong) NSArray *hiveArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) Apiary *selectedApiary;
-
-
 
 @end
 
@@ -49,7 +44,6 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-
     if (indexPath.section == 0) {
         
         ApiaryCell *apiaryCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"apiaryID" forIndexPath:indexPath];
@@ -62,20 +56,16 @@
             return nil;
         }
         
-
-        
     }else{
-               HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
+        HiveCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"hiveID" forIndexPath:indexPath];
+            Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
         
-                Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
-                //hiveCell.hiveLabel.text = hive.name;
         if (hive.apiary == NULL) {
             hiveCell.hiveLabel.text = hive.name;
             return hiveCell;
         }else{
             return nil;
         }
-    
     
     }
 
@@ -100,7 +90,6 @@
     
 }
 
-
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self.collectionView reloadData];
@@ -111,9 +100,7 @@
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
         return;
     }
-    
     CGPoint p = [gestureRecognizer locationInView:self.collectionView];
-    
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
     
     if (indexPath == nil){
@@ -121,7 +108,6 @@
     } else if (indexPath.section == 0){
 
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"Are you sure you would like to delete this apiary?" preferredStyle:UIAlertControllerStyleAlert];
-        
         [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
             NSLog(@"Canceled");
         }]];
@@ -130,7 +116,9 @@
             [[ApiaryController sharedInstance] removeApiary:[ApiaryController sharedInstance].apiaries[indexPath.item]];
             [self.collectionView reloadData];
         }]];
+        
         [self presentViewController:alertController animated:YES completion:nil];
+        
     }else if (indexPath.section == 1){
 
 
@@ -148,7 +136,9 @@
         [self presentViewController:hiveDeleteAlertController animated:YES completion:nil];
 
     }
+    
     [self.collectionView reloadData];
+    
 }
 
 
@@ -180,16 +170,5 @@
         
     }
 }
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if ([segue.identifier isEqualToString:@"hive"]) {
-//        HiveTableViewController *hiveViewController = (HiveTableViewController *)segue.destinationViewController;
-//        NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
-//        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
-//        
-//        hiveViewController = hive;
-//    }
-//}
-
 
 @end
