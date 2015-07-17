@@ -32,7 +32,7 @@
 - (IBAction)saveButton:(id)sender {
     
     if ([self.nameField  isEqual: @""]) {
-        NSLog(@"You did it wrong");
+        NSLog(@"Error");
     }else{
         [[HiveController sharedInstance] addHiveWithData:self.nameField.text andLocation:self.locationField.text];
     }
@@ -50,16 +50,5 @@
     return YES;
     
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

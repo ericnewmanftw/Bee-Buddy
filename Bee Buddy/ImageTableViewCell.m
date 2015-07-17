@@ -15,15 +15,10 @@
     // Initialization code
 }
 
-
-
 - (IBAction)buttonPressed:(id)sender {
-
     
     [self.delegate imageTapped];
 }
-
-
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     

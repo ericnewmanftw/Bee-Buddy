@@ -19,8 +19,6 @@
 
 @interface HiveTableViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *sections;
-@property (nonatomic, strong) NSArray *dates;
 
 @end
 
@@ -35,15 +33,6 @@
     [self.tableView addGestureRecognizer:lpgr];
     
     // Do any additional setup after loading the view.
-
-   
-//    //This will need to show which year an inspection has occurred in.
-//    self.sections = @[@"2014", @"2015"];
-//    
-//    //This will show when an appointment is logged.
-//    self.dates = @[@"April 25th", @"May 6th"];
-
-
     
 }
 
@@ -59,10 +48,6 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    //NSString *date = self.dates[indexPath.row];
-//    if ([InspectionController sharedInstance].inspections.count == 0) {
-//        return 0;
-//    }else{
 
     InspectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inspectionCell"];
     
@@ -92,33 +77,21 @@
     }else{
         return nil;
     }
-//    cell.date.text = [NSString stringWithFormat:@"%@",dateString];
-//    cell.notes.text = inspection.note;
-//    
-//    return cell;
-//    
-  
+
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-
-    //return self.sections.count;
-    return 2;
+    return 1;
     
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return self.sections[section];
-}
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     switch (section) {
         case 0:
-            return 0;
-            break;
-        case 1:
             return self.hive.inspections.count;
             break;
             
@@ -145,31 +118,23 @@
     }
     
     CGPoint p = [gestureRecognizer locationInView:self.tableView];
-    
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
     
     if (indexPath == nil) {
         NSLog(@"Couldn't find Index Path");
+        
     }else{
+        
         [[InspectionController sharedInstance] removeInspection:[InspectionController sharedInstance].inspections[indexPath.item]];
     }
-    [self.tableView reloadData];
     
+    [self.tableView reloadData];
     
 }
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-////     Get the new view controller using [segue destinationViewController].
-//    if ([segue.identifier isEqualToString:@"addEntry"]) {
-//        InspectionTableViewController *inspectionVC = [segue destinationViewController];
-//    }
-////     Pass the selected object to the new view controller.
 
-    
-//}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
     if ([segue.identifier isEqualToString:@"addNew"]) {

@@ -14,7 +14,7 @@
 #import "ApiaryController.h"
 #import "ApiaryViewController.h"
 #import "HiveTableViewController.h"
-#import "HiveViewController.h"
+
 
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>

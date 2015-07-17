@@ -11,14 +11,12 @@
 #import "Hive.h"
 #import "NewHiveInApiaryViewController.h"
 #import "HiveController.h"
-#import "HiveViewController.h"
 #import "ApiaryController.h"
 #import "HiveTableViewController.h"
 
 @interface ApiaryViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSArray *hiveArray;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
 
 @end
 
@@ -55,22 +53,25 @@
     HiveCollectionViewCell *hiveCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseHiveCell" forIndexPath:indexPath];
     Hive *hive = self.apiary.hives[indexPath.row];
     
-    if (hive.apiary == self.apiary) {
-        hiveCell.hiveLabel.text = hive.name;
-        return hiveCell;
-    }else{
+        if (hive.apiary == self.apiary) {
+            hiveCell.hiveLabel.text = hive.name;
+            return hiveCell;
+            
+        }else{
+            
         return nil;
-    
-    }
+        }
     
     }else{
-        return nil;
+        
+    return nil;
     }
 
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.hiveArray.count;
+    
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -79,9 +80,7 @@
 }
 
 - (IBAction)addHive:(id)sender {
-    //[self.apiary addHivesObject:hive];
-    
-    
+ 
 }
 
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer{
@@ -121,30 +120,18 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
+
     if ([segue.identifier isEqualToString:@"presentNewHive"]) {
         NewHiveInApiaryViewController *newHive = segue.destinationViewController;
         
         newHive.apiary = self.apiary;
-        
-        
-        
+
     }
     
-
     if([segue.identifier isEqualToString:@"apiaryHive"]){
-        
-//        HiveViewController *hiveViewController = (HiveViewController *)segue.destinationViewController;
-//        NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
-//        Hive *hive = [HiveController sharedInstance].hives[indexPath.row];
-//        
-//        hiveViewController.hive = hive;
-//        hiveViewController.navigationItem.title = hive.name;
-//        
+ 
         HiveTableViewController *hiveTableViewController = (HiveTableViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
         Hive *hive = self.apiary.hives[indexPath.row];

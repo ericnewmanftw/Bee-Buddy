@@ -14,9 +14,7 @@
 
 @interface InspectionTableViewController () <photoCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-
 @property (nonatomic, strong) NSArray *inspectionItems;
-
 
 @end
 
@@ -24,13 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 
     self.inspectionItems = @[@"Queen", @"Eggs", @"Open Brood", @"Capped Brood", @"Capped Honey"];
-    
-
-
 
 }
 
@@ -44,13 +37,7 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - Table view data source
-
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView reloadData];
     
@@ -66,6 +53,7 @@
                  self.queenSelected = NO;
             }
             break;
+            
         case 1:
             if (self.eggsSelected == NO) {
                 [cell setBackgroundColor:[UIColor greenColor]];
@@ -75,6 +63,7 @@
                 self.eggsSelected = NO;
             }
             break;
+            
         case 2:
             if (self.oBroodSelected == NO) {
                 [cell setBackgroundColor:[UIColor greenColor]];
@@ -84,6 +73,7 @@
                 self.oBroodSelected = NO;
             }
             break;
+            
         case 3:
             if (self.cBroodSelected == NO) {
                 [cell setBackgroundColor:[UIColor greenColor]];
@@ -93,6 +83,7 @@
                 self.cBroodSelected = NO;
             }
             break;
+            
         case 4:
             if (self.cHoneySelected == NO){
                 [cell setBackgroundColor:[UIColor greenColor]];
@@ -103,20 +94,15 @@
             }
             break;
         
-
-            
         default:
             break;
     }
-    
-
 
 }
 
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.inspectionItems.count + 3;
-    
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -222,7 +208,6 @@
 
 -(void)imageTapped{
 
-    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
@@ -238,17 +223,13 @@
     UIImage *chosenImageWithData = [UIImage imageWithData:chosenImage];
 
     ImageTableViewCell *buttonCell = [ImageTableViewCell new];
-
     [buttonCell.button setImage:chosenImageWithData forState:UIControlStateNormal];
     
     NSDate *currentDate = [NSDate date];
-    
     NSString *dateString = [NSString stringWithFormat:@"%@", currentDate];
     
     [chosenImage writeToFile:[self documentsPathForFileName:dateString] atomically:YES];
-    
     self.noteString = dateString;
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
@@ -256,7 +237,6 @@
 -(NSString *)documentsPathForFileName:(NSString *)dateString{
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-    
     NSString *documentsPath = [paths objectAtIndex:0];
     
     return [documentsPath stringByAppendingPathComponent:dateString];
@@ -275,83 +255,27 @@
         self.inspection.image = self.dateString;
         
         [[InspectionController sharedInstance] syncronize];
-        
         [self.navigationController popViewControllerAnimated:YES];
         
     }else{
     
     [[InspectionController sharedInstance] addInspectionWithQueen:self.queenSelected andEggs:self.eggsSelected andOBrood:self.oBroodSelected andCBrood:self.cBroodSelected andCHoney:self.cHoneySelected andNote:self.noteString andImage:self.dateString andDate:[NSDate date] andHive:self.hive];
-    //remember to add the hive.
     [self.navigationController popViewControllerAnimated:YES];
     }
-    
-//    NSNumber *cBroodAsNumber = [NSNumber numberWithBool:cBroodSelected];
-//    inspection.cappedBSelected = cBroodAsNumber;
-//    
-//        if (self.entry) {
-//            self.entry.title = self.titleTextField.text;
-//            self.entry.bodyText = self.bodyTextView.text;
-//            self.entry.timestamp = [NSDate date];
-//            
-//            [[EntryController sharedInstance] save];
-//        } else {
-//            self.entry = [[EntryController sharedInstance] createEntryWithTitle:self.titleTextField.text bodyText:self.bodyTextView.text];
-//        }
-//    }
-}
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
     if ([segue.identifier isEqualToString:@"notesView"]) {
-//        NSIndexPath *indexpath = [self.tableView indexPathForCell:sender];
-        
-//        NotesViewController *notesViewController = [segue destinationViewController];
-        
-        //NSLog(@"Segue Activated");
+
         NotesViewController *notesViewController = (NotesViewController *)segue.destinationViewController;
         if (self.noteString) {
             notesViewController.noteString = self.noteString;
         }
-       
     }
 }
 

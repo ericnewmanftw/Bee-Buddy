@@ -12,8 +12,6 @@
 
 @interface ImageTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIButton *button;
-
-
 @property (weak, nonatomic) id <photoCellDelegate>delegate;
 
 
