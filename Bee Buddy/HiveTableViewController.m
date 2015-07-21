@@ -56,13 +56,27 @@
     [format setDateFormat:@"MMM-dd"];
     NSString *dateString = [format stringFromDate:inspection.date];
     
+    
     if (inspection != nil) {
         cell.date.text = [NSString stringWithFormat:@"%@",dateString];
         cell.notes.text = inspection.note;
         if (inspection.image) {
-            //cell.image.image =
+           
         }
         
+//        NSData *chosenImage = info[UIImagePickerControllerEditedImage];
+//        UIImage *chosenImageWithData = [UIImage imageWithData:chosenImage];
+//        
+//        ImageTableViewCell *buttonCell = [ImageTableViewCell new];
+//        [buttonCell.button setImage:chosenImageWithData forState:UIControlStateNormal];
+//        
+//        NSDate *currentDate = [NSDate date];
+//        NSString *dateString = [NSString stringWithFormat:@"%@", currentDate];
+//        
+//        [chosenImage writeToFile:[self documentsPathForFileName:dateString] atomically:YES];
+//        self.noteString = dateString;
+//        [picker dismissViewControllerAnimated:YES completion:NULL];
+////        
 //        if (self.person.photo) {
 //            profileImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.person.photo]];
 //            
@@ -132,6 +146,15 @@
     
 }
 
+-(NSString *)documentsPathForFileName:(NSString *)dateString{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    return [documentsPath stringByAppendingPathComponent:dateString];
+    
+}
+
 #pragma mark - Navigation
 
 
@@ -168,8 +191,10 @@
         inspectionTableViewController.oBroodSelected = inspection.openBSelected.boolValue;
         inspectionTableViewController.cBroodSelected = inspection.cappedBSelected.boolValue;
         inspectionTableViewController.cHoneySelected = inspection.cappedHoneySelected.boolValue;
-        
         inspectionTableViewController.noteString = inspection.note;
+        NSString *inspectionDateString = [format stringFromDate:inspection.date];
+        inspectionTableViewController.dateString = inspectionDateString;
+        
         
         inspectionTableViewController.hive = self.hive;
     

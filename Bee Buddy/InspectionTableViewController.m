@@ -171,6 +171,8 @@
         
         if (self.dateString) {
             inspectionImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.dateString]];
+        }else{
+            [imageCell.button setBackgroundImage:inspectionImage forState:UIControlStateNormal];
         }
         
         [imageCell.button setImage:inspectionImage forState:UIControlStateNormal];
