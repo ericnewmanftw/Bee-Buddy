@@ -176,7 +176,8 @@
         
         InspectionTableViewController *inspectionTableViewController = (InspectionTableViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
-        Inspection *inspection = [InspectionController sharedInstance].inspections[indexPath.row];
+        Inspection *inspection = self.hive.inspections[indexPath.row];
+
         
         inspectionTableViewController.inspection = inspection;
         
